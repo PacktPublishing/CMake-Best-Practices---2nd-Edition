@@ -11,12 +11,11 @@ RUN  apt-get update; \
     qemu qemu-system-arm gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user \
     # QT runtime prerequisites
     libgl1-mesa-dev libglu1-mesa-dev '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev \
-    libxkbcommon-dev libxkbcommon-x11-dev bash build-essential git wget ninja-build gcovr lcov 
+    libxkbcommon-dev libxkbcommon-x11-dev bash build-essential git wget ninja-build gcovr lcov sudo libssl-dev
 
 RUN pip install cmake-format pytest pytest-depends cpplint conan
 
-RUN groupadd -r builder 
-RUN useradd --create-home --gid builder --groups dialout,plugdev,audio,tty --shell /usr/bin/bash builder
+RUN groupadd -r builder && useradd --create-home --gid builder --groups dialout,plugdev,audio,tty --shell /usr/bin/bash builder &&  mkdir -p /etc/sudoers.d && echo 'builder ALL=NOPASSWD: ALL' > /etc/sudoers.d/builder
 
 # Download version 3.23 of CMake
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.23.2/cmake-3.23.2-linux-x86_64.sh
