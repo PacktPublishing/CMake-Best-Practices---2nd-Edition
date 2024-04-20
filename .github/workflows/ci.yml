@@ -28,7 +28,7 @@ jobs:
             configurePreset: ci-ninja-debug
 
           - name: macos-appleclang-12
-            os: macos-10.15
+            os: macos-14
             configurePreset: ci-ninja-debug
 
           - name: windows-msvc-19
@@ -69,7 +69,7 @@ jobs:
         run: |
           brew update
           brew extract --version=1.2021.13 plantuml homebrew/cask
-          brew install openssl@1.1 plantuml@1.2021.13 ninja clang-format llvm
+          brew install openssl plantuml@1.2021.13 ninja clang-format llvm
           brew install --cask doxygen
           
           ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"
@@ -81,6 +81,7 @@ jobs:
         run: |
           choco install -y --limit-output plantuml ninja opencppcoverage
           choco install -y --limit-output doxygen.install --version="1.9.2"
+          choco install -y --limit-output openssl
 
       - name: dependencies (debian-like)
         if: contains(matrix.os, 'ubuntu') || contains(matrix.os, 'debian')
