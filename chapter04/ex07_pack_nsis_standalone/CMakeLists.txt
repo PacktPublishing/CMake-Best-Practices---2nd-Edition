@@ -15,16 +15,31 @@ if(NOT PROJECT_IS_TOP_LEVEL)
   message(FATAL_ERROR "The chapter-4, ex07_pack project is intended to be a standalone, top-level project. Do not include this directory.")
 endif()
 
+# Search the package OpenSSL and its component SSL, configuration fails if not found
+# this is used by the executable target
+find_package(OpenSSL REQUIRED COMPONENTS SSL)
+
 add_subdirectory(executable)
 add_subdirectory(library)
 
-include(InstallRequiredSystemLibraries)
+
+
+
+if(WIN32)
+  # if it is a debug build, we want to install debug libraries with the InstallRequiredSystemLibraries module
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(CMAKE_INSTALL_DEBUG_LIBRARIES TRUE)
+  endif()
+  # this includes compiler provided runtime libraries on windows
+  include(InstallRequiredSystemLibraries)
+endif()
+
+# this includes the runtime directories of the executable and the library
 install(TARGETS ch4_ex07_executable
         RUNTIME_DEPENDENCIES
         PRE_EXCLUDE_REGEXES "api-ms-.*" "ext-ms-.*"
         POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-        DIRECTORIES "${RUNTIME_DIRS}")
-
+        )
 
 # We will not explicitly specify project name and version here and 
 # let CPack to get project name and version from the project()
@@ -35,6 +50,5 @@ set(CPACK_GENERATOR "NSIS")
 set(CPACK_THREADS 0) 
 # The DEB generator requires CPACK_DEBIAN_PACKAGE_MAINTAINER
 # value to be set.
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "CBP Authors")
 # Enable packaging support for the project
 include(CPack)
