@@ -18,6 +18,9 @@ add_executable(ch04_ex07_executable src/main.cpp)
 target_compile_features(ch04_ex07_executable PRIVATE cxx_std_11)
 
 # Link executable target to library target
-target_link_libraries(ch04_ex07_executable PRIVATE ch4_ex06_library)
+target_link_libraries(ch04_ex07_executable PRIVATE ch4_ex07_library)
+
+
+include(GNUInstallDirs)
 
 install(TARGETS ch04_ex07_executable)
