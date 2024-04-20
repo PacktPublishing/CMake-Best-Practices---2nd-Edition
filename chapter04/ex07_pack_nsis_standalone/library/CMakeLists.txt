@@ -11,25 +11,11 @@ project(
   DESCRIPTION "Chapter 4 Example 06, CPack example"
   LANGUAGES CXX)
 
-# Define the executable that will consume the ch4_ex05_lib package
 add_library(ch04_ex07_library STATIC src/lib.cpp)
 
 # Set the required C++ standard for the target
-target_compile_features(ch04_ex07_library PRIVATE cxx_std_11)
+target_compile_features(ch04_ex07_library PRIVATE cxx_std_17)
 
-# Specify the include directories for the target named `ch4_ex02_static`
 target_include_directories(ch04_ex07_library PUBLIC include)
 
-include(GNUInstallDirs) # Defines the ${CMAKE_INSTALL_INCLUDEDIR} variable.
-
-# Make executable target `ch4_ex02_static` installable. As mentioned before
-# in Chapter 4 content, this will only install the output artifacts produced by the target.
-install(TARGETS ch04_ex07_library)
-
-# Install the header files. Since header files are not listed as output artifacts, they have
-# to be installed separately. 
-install (
-    DIRECTORY ${PROJECT_SOURCE_DIR}/include/
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
+# this target ist not installed deliberately to illustrate how to use RUNTIME_DEPENDENCIES in CPack

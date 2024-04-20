@@ -9,7 +9,7 @@
 #pragma once
 
 namespace chapter4 {
-namespace ex06 {
+namespace ex07 {
 /**
  * @brief The 'greeter' class interface
  */
@@ -20,5 +20,5 @@ public:
    */
   void greet();
 }; // class greeter
-} // namespace ex06
+} // namespace ex07
 } // namespace chapter4
