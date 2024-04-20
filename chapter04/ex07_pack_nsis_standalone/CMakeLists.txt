@@ -22,9 +22,6 @@ find_package(OpenSSL REQUIRED COMPONENTS SSL)
 add_subdirectory(executable)
 add_subdirectory(library)
 
-
-
-
 if(WIN32)
   # if it is a debug build, we want to install debug libraries with the InstallRequiredSystemLibraries module
   if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -44,8 +41,8 @@ install(TARGETS ch4_ex07_executable
 # We will not explicitly specify project name and version here and 
 # let CPack to get project name and version from the project()
 set(CPACK_PACKAGE_VENDOR "CBP Authors")
-# Enable DEB, RPM and TBZ2 generators by default
-set(CPACK_GENERATOR "NSIS")
+# Enable NSIS and TBZ2 generators by default
+set(CPACK_GENERATOR "NSIS;TBZ2")
 # Use all available cores when parallelism is supported
 set(CPACK_THREADS 0) 
 # The DEB generator requires CPACK_DEBIAN_PACKAGE_MAINTAINER
