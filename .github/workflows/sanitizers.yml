@@ -11,7 +11,7 @@ jobs:
     name: linux-sanitizers
     runs-on: ubuntu-22.0
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: install-python-3
         uses: actions/setup-python@v2
@@ -47,7 +47,7 @@ jobs:
     runs-on: windows-2019
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: install-python-3
         uses: actions/setup-python@v2

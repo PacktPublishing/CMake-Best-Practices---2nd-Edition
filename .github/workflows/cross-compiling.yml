@@ -11,7 +11,7 @@ jobs:
     name: ios
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: cmake-configure
         run: |
@@ -35,7 +35,7 @@ jobs:
           ndk-version: r23b
           add-to-path: false
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       
       - name: cmake-configure
         run: |
@@ -54,7 +54,7 @@ jobs:
     name: arm-crosscompiling
     runs-on: ubuntu-22.0
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: install dependencies
         run: |
