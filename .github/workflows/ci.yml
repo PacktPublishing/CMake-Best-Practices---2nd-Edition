@@ -81,7 +81,8 @@ jobs:
         run: |
           choco install -y --limit-output plantuml ninja opencppcoverage
           choco install -y --limit-output doxygen.install --version="1.9.2"
-          choco install -y --limit-output openssl --version="3.1.1"
+          choco install -y --limit-output openssl
+          echo "OPENSSL_ROOT_DIR=C:\Program Files\OpenSSL-Win64" >> $GITHUB_ENV
 
       - name: dependencies (debian-like)
         if: contains(matrix.os, 'ubuntu') || contains(matrix.os, 'debian')
