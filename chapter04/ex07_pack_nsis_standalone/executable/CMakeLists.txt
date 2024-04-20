@@ -6,21 +6,18 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(
-  ch04_ex07_executable
+  ch4_ex07_executable
   VERSION 1.0
-  DESCRIPTION "Chapter 4 Example 06, CPack example"
+  DESCRIPTION "Chapter 4 Example 07, CPack example"
   LANGUAGES CXX)
 
 # Define the executable that will consume the ch4_ex05_lib package
-add_executable(ch04_ex07_executable src/main.cpp)
+add_executable(ch4_ex07_executable src/main.cpp)
 
 # Set the required C++ standard for the target
-target_compile_features(ch04_ex07_executable PRIVATE cxx_std_11)
+target_compile_features(ch4_ex07_executable PRIVATE cxx_std_11)
 
 # Link executable target to library target
-target_link_libraries(ch04_ex07_executable PRIVATE ch4_ex07_library)
+target_link_libraries(ch4_ex07_executable PRIVATE ch4_ex07_library)
 
-
-include(GNUInstallDirs)
-
-install(TARGETS ch04_ex07_executable)
+install(TARGETS ch4_ex07_executable)

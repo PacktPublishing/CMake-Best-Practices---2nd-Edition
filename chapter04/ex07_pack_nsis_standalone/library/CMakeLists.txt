@@ -6,16 +6,30 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(
-  ch04_ex07_library
+  ch4_ex07_library
   VERSION 1.0
-  DESCRIPTION "Chapter 4 Example 06, CPack example"
+  DESCRIPTION "Chapter 4 Example 07, CPack example"
   LANGUAGES CXX)
 
-add_library(ch04_ex07_library STATIC src/lib.cpp)
+# Define the executable that will consume the ch4_ex05_lib package
+add_library(ch4_ex07_library STATIC src/lib.cpp)
 
 # Set the required C++ standard for the target
-target_compile_features(ch04_ex07_library PRIVATE cxx_std_17)
+target_compile_features(ch4_ex07_library PRIVATE cxx_std_11)
 
-target_include_directories(ch04_ex07_library PUBLIC include)
+# Specify the include directories for the target named `ch4_ex02_static`
+target_include_directories(ch4_ex07_library PUBLIC include)
 
-# this target ist not installed deliberately to illustrate how to use RUNTIME_DEPENDENCIES in CPack
+include(GNUInstallDirs) # Defines the ${CMAKE_INSTALL_INCLUDEDIR} variable.
+
+# Make executable target `ch4_ex02_static` installable. As mentioned before
+# in Chapter 4 content, this will only install the output artifacts produced by the target.
+install(TARGETS ch4_ex07_library)
+
+# Install the header files. Since header files are not listed as output artifacts, they have
+# to be installed separately. 
+install (
+    DIRECTORY ${PROJECT_SOURCE_DIR}/include/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
