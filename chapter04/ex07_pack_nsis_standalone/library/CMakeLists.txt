@@ -12,7 +12,7 @@ project(
   LANGUAGES CXX)
 
 # Define the executable that will consume the ch4_ex05_lib package
-add_library(ch4_ex07_library STATIC src/lib.cpp)
+add_library(ch4_ex07_library SHARED src/lib.cpp)
 
 # Set the required C++ standard for the target
 target_compile_features(ch4_ex07_library PRIVATE cxx_std_11)

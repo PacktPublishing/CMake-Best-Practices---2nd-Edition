@@ -18,11 +18,19 @@ endif()
 add_subdirectory(executable)
 add_subdirectory(library)
 
+include(InstallRequiredSystemLibraries)
+install(TARGETS ch4_ex07_executable
+        RUNTIME_DEPENDENCIES
+        PRE_EXCLUDE_REGEXES "api-ms-.*" "ext-ms-.*"
+        POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
+        DIRECTORIES "${RUNTIME_DIRS}")
+
+
 # We will not explicitly specify project name and version here and 
 # let CPack to get project name and version from the project()
 set(CPACK_PACKAGE_VENDOR "CBP Authors")
 # Enable DEB, RPM and TBZ2 generators by default
-set(CPACK_GENERATOR "DEB;TBZ2;TGZ;STGZ")
+set(CPACK_GENERATOR "NSIS")
 # Use all available cores when parallelism is supported
 set(CPACK_THREADS 0) 
 # The DEB generator requires CPACK_DEBIAN_PACKAGE_MAINTAINER
