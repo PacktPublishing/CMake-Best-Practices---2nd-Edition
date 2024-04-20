@@ -6,7 +6,7 @@
  * ______________________________________________________
  */
 
-#include <chapter4/ex07/lib.hpp>
+#include <chapter4/ex06/lib.hpp>
 #include <iostream>
 
 namespace chapter4 {
