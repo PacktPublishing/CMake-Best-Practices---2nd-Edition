@@ -10,6 +10,7 @@
         "cheshirekow.cmake-format",
         "eamodio.gitlens",
         "xaver.clang-format",
+        "github.vscode-github-actions"
     ],
     "remoteEnv": {
         "DISPLAY": ":0"

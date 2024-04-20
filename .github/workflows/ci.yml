@@ -18,12 +18,12 @@ jobs:
           [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-19, windows-clang]
         include:
           - name: ubuntu-gcc-10
-            os: ubuntu-20.04
+            os: ubuntu-22.0
             compiler: g++-10
             configurePreset: ci-ninja-debug
 
           - name: ubuntu-clang-12
-            os: ubuntu-20.04
+            os: ubuntu-22.0
             compiler: clang++-12
             configurePreset: ci-ninja-debug
 
@@ -52,7 +52,7 @@ jobs:
       - name: install-python-deps
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install pytest pytest-depends conan==1.44 cpplint 
+          pip3 install pytest pytest-depends conan cpplint 
 
       - name: set-compiler-env
         run: |
