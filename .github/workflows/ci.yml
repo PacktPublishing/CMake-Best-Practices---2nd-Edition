@@ -69,8 +69,6 @@ jobs:
 
       - name: dependecies (macos)
         if: runner.os == 'macOS'
-        # macOS is using libreSSL which clashes with openssl which means that the package is extracted but
-        # not installed properly in the system. Because of this cmake needs to be pointed to the correct place
         run: |
           brew update
           brew install openssl plantuml ninja clang-format llvm
