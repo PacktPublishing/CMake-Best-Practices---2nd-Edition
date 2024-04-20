@@ -73,8 +73,7 @@ jobs:
         # not installed properly in the system. Because of this cmake needs to be pointed to the correct place
         run: |
           brew update
-          brew extract --version=1.2021.13 plantuml homebrew/cask
-          brew install openssl plantuml@1.2021.13 ninja clang-format llvm
+          brew install openssl plantuml ninja clang-format llvm
           brew install --cask doxygen
           
           ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"
