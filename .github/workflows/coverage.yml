@@ -6,6 +6,11 @@ on:
   release:
     types: [published]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+    
+
 jobs:
   linux-coverage:
     name: linux-coverage

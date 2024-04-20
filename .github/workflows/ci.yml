@@ -6,6 +6,11 @@ on:
   release:
     types: [published]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+    
+
 jobs:
   ci:
     name: ${{ matrix.name }}
@@ -47,7 +52,7 @@ jobs:
       - name: install-python-3
         uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.12.1
 
       - name: install-python-deps
         run: |
