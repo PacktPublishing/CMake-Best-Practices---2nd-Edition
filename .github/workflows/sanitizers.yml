@@ -66,7 +66,8 @@ jobs:
 
       - name: dependencies (windows)
         run: |
-          choco install -y --limit-output openssl ninja 
+          choco install -y --limit-output ninja
+          choco install -y --limit-output openssl --version="3.1.1"
 
       - name: correct-tmp-dir (win)
         run: |
