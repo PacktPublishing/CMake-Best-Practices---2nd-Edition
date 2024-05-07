@@ -18,9 +18,9 @@ RUN pip install cmake-format pytest pytest-depends cpplint conan
 RUN groupadd -r builder && useradd --create-home --gid builder --groups dialout,plugdev,audio,tty --shell /usr/bin/bash builder &&  mkdir -p /etc/sudoers.d && echo 'builder ALL=NOPASSWD: ALL' > /etc/sudoers.d/builder
 
 # Download version 3.23 of CMake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.23.2/cmake-3.23.2-linux-x86_64.sh
-RUN head cmake-3.23.2-linux-x86_64.sh 
-RUN chmod +x ./cmake-3.23.2-linux-x86_64.sh && ./cmake-3.23.2-linux-x86_64.sh --skip-license --prefix=/usr/local 
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.24.3/cmake-3.24.3-linux-x86_64.sh
+RUN head cmake-3.24.3-linux-x86_64.sh 
+RUN chmod +x ./cmake-3.24.3-linux-x86_64.sh && ./cmake-3.24.3-linux-x86_64.sh --skip-license --prefix=/usr/local 
 
 USER builder
 
