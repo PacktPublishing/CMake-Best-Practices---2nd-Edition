@@ -16,7 +16,7 @@ project(
 list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_BINARY_DIR})
 
 # find the just downloaded package
-find_package(fmt 6.1 REQUIRED)
+find_package(fmt 10.2.1 REQUIRED)
 
 # Create a target to build an executable
 add_executable(conan_conanfile_example)

@@ -1,6 +1,7 @@
 
 [requires]
-fmt/6.1.2
+fmt/10.2.1
 
 [generators]
-cmake_find_package_multi
+CMakeDeps
+CMakeToolchain
