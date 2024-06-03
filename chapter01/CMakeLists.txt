@@ -35,7 +35,8 @@ if(CHAPTER1_PRINT_LANGUAGE_EXAMPLES)
     list(APPEND MYLIST "xyz") 
     message(STATUS "Chapter1: MYLIST is: ${MYLIST}")
 
-    list(FIND MYLIST def ABC_INDEX) 
+    #find the string abc in MYLIST and store it in ABC_INDEX
+    list(FIND MYLIST abc ABC_INDEX) 
     list(GET MYLIST ${ABC_INDEX} ABC) 
     message(STATUS "Chapter1: Index of 'def' in MYLIST is ${ABC_INDEX} the value at the index is '${ABC}'")
 

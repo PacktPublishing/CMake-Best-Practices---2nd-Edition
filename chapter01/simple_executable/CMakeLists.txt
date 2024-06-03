@@ -13,7 +13,7 @@ project(
   LANGUAGES CXX)
 
 # Add an executable target named `chapter1`
-add_executable(chapter1)
+add_executable(ch1_simple_executable)
 # Add sources to the target `chapter1`
-target_sources(chapter1 PRIVATE src/main.cpp)
+target_sources(ch1_simple_executable PRIVATE src/main.cpp)
 
