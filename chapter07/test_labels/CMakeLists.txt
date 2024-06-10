@@ -29,6 +29,9 @@ set_tests_properties(labeled_test_2 PROPERTIES LABELS "will_fail" WILL_FAIL True
 add_test(NAME labeled_test_3 COMMAND ch7_test_labels extra_arg)
 set_tests_properties(labeled_test_3 PROPERTIES LABELS "example;will_fail" WILL_FAIL True)
 
+# Label the test integration_test_1 with the label "integration test" for demonstrating filtering through presets
+add_test(NAME integration_test_1 COMMAND ch7_test_labels)
+set_tests_properties(labeled_test_1 PROPERTIES LABELS "example")
 
 
 

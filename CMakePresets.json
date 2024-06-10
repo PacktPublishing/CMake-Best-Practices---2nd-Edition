@@ -260,6 +260,23 @@
             "execution": {
                 "noTestsAction": "error",
                 "stopOnFailure": true
+            },
+            "filter": {
+                "exclude": {
+                    "label": "integration"
+                }
+            }
+        },
+        {
+            "name": "ci-coverage-tests",
+            "configurePreset": "ci-ninja-coverage",
+            "output": {
+                "outputOnFailure": true
+            },
+            "filter": {
+                "include": {
+                    "name": ".*coverage.*"
+                }
             }
         }
     ]
