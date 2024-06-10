@@ -219,6 +219,10 @@
     ],
     "buildPresets": [
         {
+            "name": "ci-ninja-debug-build",
+            "configurePreset": "ci-ninja-debug"
+        },
+        {
             "name": "ci-msvc-debug",
             "configurePreset": "ci-msvc-19",
             "configuration": "Debug",
@@ -252,7 +256,7 @@
     "testPresets": [
         {
             "name": "ci-unit-tests-debug",
-            "configurePreset": "ci-msvc-19",
+            "configurePreset": "ci-ninja-debug",
             "configuration": "Debug",
             "output": {
                 "outputOnFailure": true
@@ -283,11 +287,36 @@
     "packagePresets": [
         {
             "name": "ci-package-tgz",
-            "configurePreset": "ci-ninja-release",
+            "configurePreset": "ci-ninja-debug",
             "generators": [
                 "TGZ"
             ],
             "packageDirectory": "${sourceDir}/dist"
+        }
+    ],
+    "workflowPresets": [
+        {
+            "name": "ci-ninja-debug-workflow",
+            "displayName": "CI",
+            "description": "Continuous Integration",
+            "steps": [
+                {
+                    "type": "configure",
+                    "name": "ci-ninja-debug"
+                },
+                {
+                    "type": "build",
+                    "name": "ci-ninja-debug-build"
+                },
+                {
+                    "type": "test",
+                    "name": "ci-unit-tests-debug"
+                },
+                {
+                    "type": "package",
+                    "name": "ci-package-tgz"
+                }
+            ]
         }
     ]
 }
