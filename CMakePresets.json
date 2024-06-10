@@ -1,8 +1,8 @@
 {
-    "version": 3,
+    "version": 6,
     "cmakeMinimumRequired": {
         "major": 3,
-        "minor": 21,
+        "minor": 25,
         "patch": 0
     },
     "configurePresets": [
@@ -278,6 +278,16 @@
                     "name": ".*coverage.*"
                 }
             }
+        }
+    ],
+    "packagePresets": [
+        {
+            "name": "ci-package-tgz",
+            "configurePreset": "ci-ninja-release",
+            "generators": [
+                "TGZ"
+            ],
+            "packageDirectory": "${sourceDir}/dist"
         }
     ]
 }
