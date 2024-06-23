@@ -1,6 +1,7 @@
 # CMakeLists file for the Chapter 2 - Component 1
 #
 # SPDX-License-Identifier: MIT
+cmake_minimum_required(VERSION 3.21)
 
 project(
     ch2_framework_component1
