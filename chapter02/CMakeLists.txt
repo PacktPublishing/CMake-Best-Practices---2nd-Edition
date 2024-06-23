@@ -27,7 +27,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
   set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 endif()
 
-
+add_subdirectory(simple_example)
 add_subdirectory(component_interface)
 add_subdirectory(component1)
 add_subdirectory(component2)
