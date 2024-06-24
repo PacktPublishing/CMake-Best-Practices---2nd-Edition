@@ -17,7 +17,7 @@ endif()
 
 # Search the package OpenSSL and its component SSL, configuration fails if not found
 # this is used by the executable target
-find_package(OpenSSL REQUIRED COMPONENTS SSL)
+find_package(OpenSSL COMPONENTS SSL)
 
 add_subdirectory(executable)
 add_subdirectory(library)

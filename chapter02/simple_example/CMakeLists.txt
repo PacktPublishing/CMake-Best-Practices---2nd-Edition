@@ -12,6 +12,9 @@ project(
   DESCRIPTION "A simple C++ project to demonstrate basic CMake usage"
   LANGUAGES CXX)
 
+# Generate compile_commands.json for better IDE integration
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # Add an executable target named `chapter2_simple_example`
 add_executable(chapter2_simple_example)
 # Add sources to the target `chapter2_simple_example`
