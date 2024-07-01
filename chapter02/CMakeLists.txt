@@ -11,6 +11,8 @@ project(
     LANGUAGES CXX
 )
 
+message(STATUS "Current build type is `${CMAKE_BUILD_TYPE}`")
+
 # Option to exclude driver application from build.
 set(CHAPTER2_BUILD_DRIVER_APPLICATION
     TRUE
