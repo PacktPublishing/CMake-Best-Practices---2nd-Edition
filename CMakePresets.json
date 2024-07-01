@@ -157,10 +157,10 @@
             }
         },
         {
-            "name": "ci-msvc-19",
-            "displayName": "msvc 19",
-            "description": "Configuring for msvc 19",
-            "generator": "Visual Studio 16 2019",
+            "name": "ci-msvc-22",
+            "displayName": "msvc 22",
+            "description": "Configuring for msvc 22",
+            "generator": "Visual Studio 17 2022",
             "binaryDir": "build",
             "condition": {
                 "type": "equals",
@@ -169,10 +169,10 @@
             }
         },
         {
-            "name": "ci-msvc-19-sanitizer",
-            "displayName": "msvc 19",
-            "description": "Configuring for code sanitizing with msvc 19 ",
-            "generator": "Visual Studio 16 2019",
+            "name": "ci-msvc-22-sanitizer",
+            "displayName": "msvc 22",
+            "description": "Configuring for code sanitizing with msvc 22 ",
+            "generator": "Visual Studio 17 2022",
             "binaryDir": "build-sanitizer",
             "architecture": "x64",
             "condition": {
@@ -224,7 +224,7 @@
         },
         {
             "name": "ci-msvc-debug",
-            "configurePreset": "ci-msvc-19",
+            "configurePreset": "ci-msvc-22",
             "configuration": "Debug",
             "condition": {
                 "type": "equals",
@@ -234,7 +234,7 @@
         },
         {
             "name": "ci-msvc-release",
-            "configurePreset": "ci-msvc-19",
+            "configurePreset": "ci-msvc-22",
             "configuration": "Release",
             "condition": {
                 "type": "equals",
@@ -244,7 +244,7 @@
         },
         {
             "name": "ci-msvc-debug-sanitizer",
-            "configurePreset": "ci-msvc-19-sanitizer",
+            "configurePreset": "ci-msvc-22-sanitizer",
             "configuration": "Debug",
             "condition": {
                 "type": "equals",

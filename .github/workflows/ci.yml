@@ -36,14 +36,14 @@ jobs:
             os: macos-14
             configurePreset: ci-ninja-debug
 
-          - name: windows-msvc-19
-            os: windows-2019
-            configurePreset: ci-msvc-19
+          - name: windows-msvc-22
+            os: windows-2022
+            configurePreset: ci-msvc-22
             buildPreset: ci-msvc-debug
             testPreset: ci-unit-tests-debug
 
           - name: windows-clang
-            os: windows-2019
+            os: windows-2022
             configurePreset: ci-ninja-windows-debug
 
     steps:
