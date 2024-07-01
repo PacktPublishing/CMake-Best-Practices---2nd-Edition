@@ -15,11 +15,19 @@ project(
 # enable debuging for finding the package (For illustrative purposes)
 # set(CMAKE_FIND_DEBUG_MODE TRUE )
 
-# Search the package OpenSSL and its component SSL, configuration fails if not found
-# because of the keyword REQUIRED
-find_package(OpenSSL REQUIRED COMPONENTS SSL)
 
-# disable debugging again set(CMAKE_FIND_DEBUG_MODE FALSE )
+# Search the package OpenSSL and its component SSL. 
+# To have the configuration fail if not found, add the REQUIRED keyword like this:
+# find_package(OpenSSL COMPONENTS SSL REQUIRED)
+find_package(OpenSSL COMPONENTS SSL)
+
+# disable debugging again 
+# set(CMAKE_FIND_DEBUG_MODE FALSE )
+
+if(OpenSSL-NOTFOUND)
+    message(STATUS "OpenSSL package not found; Not building find-package example.")
+    return()
+endif()
 
 # Create a target to build an executable
 add_executable(ch5_find_package_example)

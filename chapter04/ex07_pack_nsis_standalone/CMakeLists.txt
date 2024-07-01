@@ -15,10 +15,6 @@ if(NOT PROJECT_IS_TOP_LEVEL)
   message(FATAL_ERROR "The chapter-4, ex07_pack project is intended to be a standalone, top-level project. Do not include this directory.")
 endif()
 
-# Search the package OpenSSL and its component SSL, configuration fails if not found
-# this is used by the executable target
-find_package(OpenSSL COMPONENTS SSL)
-
 add_subdirectory(executable)
 add_subdirectory(library)
 

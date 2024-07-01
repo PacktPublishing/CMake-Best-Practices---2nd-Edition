@@ -18,7 +18,7 @@ add_executable(ch4_ex07_executable src/main.cpp)
 target_compile_features(ch4_ex07_executable PRIVATE cxx_std_11)
 
 # Link executable target to library target
-target_link_libraries(ch4_ex07_executable PRIVATE ch4_ex07_library OpenSSL::SSL)
+target_link_libraries(ch4_ex07_executable PRIVATE ch4_ex07_library)
 
 
 install(TARGETS ch4_ex07_executable)
