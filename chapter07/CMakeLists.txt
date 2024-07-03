@@ -12,6 +12,8 @@ project(
     LANGUAGES CXX
 )
 
+include(CTest)
+
 add_subdirectory(simple_test)
 add_subdirectory(test_labels)
 add_subdirectory(pass_fail_criteria)

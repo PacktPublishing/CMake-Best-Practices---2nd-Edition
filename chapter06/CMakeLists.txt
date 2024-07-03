@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.23)
 
-option(ENABLE_DOCUMENTATION "Enable documentation" OFF)
+option(ENABLE_DOCUMENTATION "Enable documentation" ON)
 
 if(NOT ENABLE_DOCUMENTATION)
   message(STATUS "Documentation is disabled, excluded chapter 6 documentation examples")

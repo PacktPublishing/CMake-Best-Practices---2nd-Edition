@@ -30,7 +30,7 @@ set(DOXYGEN_AUTOLINK_SUPPORT YES)
 # Enable dot graph support
 set(DOXYGEN_HAVE_DOT YES)
 # Include collaboration diagrams in class documentation
-set(DOXYGEN_COLLABORATION_GRAPH NO)
+set(DOXYGEN_COLLABORATION_GRAPH YES)
 # Include class diagrams in class documentation
 set(DOXYGEN_CLASS_GRAPH YES)
 # Generate UML-like graphs
