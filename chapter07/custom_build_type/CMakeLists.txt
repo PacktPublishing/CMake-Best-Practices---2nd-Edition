@@ -32,7 +32,7 @@ else()
     # if the build type is not set force it to debug
     if(NOT CMAKE_BUILD_TYPE)
         set(CMAKE_BUILD_TYPE Debug CACHE STRING "" FORCE)
-    # If the build type is unknown fail configuration witn an error
+    # If the build type is unknown fail configuration with an error
     elseif(NOT CMAKE_BUILD_TYPE IN_LIST allowedBuildTypes)
         message(FATAL_ERROR "Unknown build type: ${CMAKE_BUILD_TYPE}")
     endif()
