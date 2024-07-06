@@ -24,7 +24,7 @@ find_package(OpenSSL COMPONENTS SSL)
 # disable debugging again 
 # set(CMAKE_FIND_DEBUG_MODE FALSE )
 
-if(OpenSSL-NOTFOUND)
+if(NOT OPENSSL)
     message(STATUS "OpenSSL package not found; Not building find-package example.")
     return()
 endif()

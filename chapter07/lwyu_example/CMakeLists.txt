@@ -14,7 +14,7 @@ project(
 find_package(OpenSSL)
 
 # only enable lwyu if openSSL is found and only for GCC and CLang
-if(OpenSSL-NOTFOUND)
+if(NOT OPENSSL)
   message(STATUS "OpenSSL not found, disabling link what you use example")
 
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
