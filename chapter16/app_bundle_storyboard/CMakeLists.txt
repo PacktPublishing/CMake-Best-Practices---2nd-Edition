@@ -18,3 +18,4 @@ add_executable(ch16_app_bundle_storyboard MACOSX_BUNDLE src/main.mm)
 target_sources(ch16_app_bundle_storyboard PRIVATE ${resource_files})
 
 set_source_files_properties(${resource_files} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
+target_link_libraries(ch16_app_bundle_storyboard "-framework UIKit")
