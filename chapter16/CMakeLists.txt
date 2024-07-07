@@ -16,4 +16,5 @@ project(
 if(APPLE)
     add_subdirectory(hello_world_apple)
     add_subdirectory(app_bundle_example)
+    add_subdirectory(app_bundle_example_custom_plist)
 endif()
