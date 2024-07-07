@@ -1,6 +1,5 @@
 #pragma once
 
-#include "hello/export_hello.hpp"
 #include <string>
 
 namespace hello {
