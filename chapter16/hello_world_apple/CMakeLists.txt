@@ -10,7 +10,7 @@ project(
 )
 
 # Add the executable
-add_executable(ch16_hello_world_apple src/main.cpp)
+add_executable(ch16_hello_world_apple src/main.mm)
 
 # Link the Cocoa framework
 target_link_libraries(ch16_hello_world_apple "-framework Cocoa")
