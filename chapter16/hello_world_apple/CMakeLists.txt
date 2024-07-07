@@ -6,7 +6,7 @@ project(
     VERSION 1.0
     DESCRIPTION
         "A simple C++ project to demonstrate an apple ui"
-    LANGUAGES CXX
+    LANGUAGES CXX OBJCXX
 )
 
 # set some global XCode properties 

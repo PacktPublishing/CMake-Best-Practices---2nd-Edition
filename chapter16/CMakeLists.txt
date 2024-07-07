@@ -9,7 +9,7 @@ project(
     VERSION 1.0
     DESCRIPTION
         "Examples for chapter 16 of the CMake Best Practices book"
-    LANGUAGES CXX
+    LANGUAGES CXX OBJCXX
 )
 
 # The examples in this chapter are apple specific
