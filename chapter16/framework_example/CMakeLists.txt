@@ -25,6 +25,7 @@ set_target_properties(
                PRIVATE_HEADER src/internal.hpp
                MACOSX_FRAMEWORK_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.in"
 )
+target_compile_features(ch16_framework_example PRIVATE cxx_std_17)
 
 # add sources to the library target
 target_sources(
@@ -38,32 +39,3 @@ target_include_directories(
     PRIVATE src/ch16_framework_example
     PUBLIC include
 )
-
-# if using limited visibility, set CXX_VISIBILILTY_PRESET to "hidden"
-include(GenerateExportHeader)
-set_property(
-    TARGET ch16_framework_example
-    PROPERTY CXX_VISIBILITY_PRESET "hidden"
-)
-# Hide inlined functions by default, reducing the size of the library
-set_property(
-    TARGET ch16_framework_example
-    PROPERTY VISIBILITY_INLINES_HIDDEN TRUE
-)
-# this command generates a header file in the CMAKE_CURRENT_BINARY_DIR which
-# sets the visibility attributes according to the compiler settings
-generate_export_header(
-    ch16_framework_example
-    EXPORT_FILE_NAME
-    export/hello/export_hello.hpp
-)
-# Add CMAKE_CURRENT_BINARY_DIR to the include path so the generated header can
-# be found
-target_include_directories(
-    ch16_framework_example
-    PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/export"
-)
-
-# An alternative but not recomended way export the symbols is to use
-# set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE) Which exports all dll symbols by
-# default
