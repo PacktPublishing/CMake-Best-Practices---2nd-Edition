@@ -15,4 +15,5 @@ project(
 # The examples in this chapter are apple specific
 if(APPLE)
     add_subdirectory(hello_world_apple)
+    add_subdirectory(app_bundle_example)
 endif()

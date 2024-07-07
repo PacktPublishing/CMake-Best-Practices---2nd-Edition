@@ -10,7 +10,7 @@ project(
 )
 
 # set some global XCode properties 
-set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "Apple Development")
+set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "Mac Development")
 set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM "CMake Best Practice Authors")
 
 # Add the executable
