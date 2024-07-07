@@ -23,7 +23,6 @@ set_target_properties(
                FRAMEWORK_VERSION 1
                PUBLIC_HEADER include/hello.hpp
                PRIVATE_HEADER src/internal.hpp
-               MACOSX_FRAMEWORK_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info.plist.in"
 )
 target_compile_features(ch16_framework_example PRIVATE cxx_std_17)
 
