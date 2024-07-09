@@ -16,14 +16,17 @@ FetchContent_Declare(benchmark
 # Declare google test dependency details. We will explicitly require 1.10.0 version this time.
 FetchContent_Declare(GTest
     GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG        release-1.10.0
+    GIT_TAG        release-1.11.0
 )
+
+# Since Gtest 1.14 has the minimum required C++ standard set to 14 this is enforced here
+
 
 # Declaring dependencies via FetchContent_Declare does not make them "available", meaning
 # they will not be downloaded nor be installed until we call FetchContent_MakeAvailable()
 # or FetchContent_Populate().
-FetchContent_MakeAvailable(GTest benchmark)
 
+FetchContent_MakeAvailable(GTest benchmark)
 # To make target names compatible with find_package(...), so we can switch between superbuild
 # and find_package_(...) easily.
 add_library(GTest::Main ALIAS gtest_main)
