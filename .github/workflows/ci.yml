@@ -23,12 +23,12 @@ jobs:
           [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-22, windows-clang]
         include:
           - name: ubuntu-gcc-10
-            os: ubuntu-22.0
+            os: ubuntu-22.04
             compiler: g++-10
             configurePreset: ci-ninja-debug
 
           - name: ubuntu-clang-12
-            os: ubuntu-22.0
+            os: ubuntu-22.04
             compiler: clang++-12
             configurePreset: ci-ninja-debug
 
@@ -71,7 +71,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install openssl plantuml ninja clang-format llvm
+          brew install plantuml ninja clang-format llvm
           brew install --cask doxygen
           
           ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"
