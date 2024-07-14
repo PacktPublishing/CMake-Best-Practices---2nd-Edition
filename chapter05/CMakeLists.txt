@@ -15,7 +15,7 @@ project(
 add_subdirectory(find_package_example)
 add_subdirectory(find_module)
 add_subdirectory(fetch_content_example)
-add_subdirectory(external_project_example)
+add_subdirectory(external_project)
 
 # Look for the conan command on the host system, if conan is not found
 # exclude all conan related examples from the proejct
