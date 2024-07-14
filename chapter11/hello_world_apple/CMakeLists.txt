@@ -24,5 +24,6 @@ target_compile_features(ch16_hello_world_apple PRIVATE cxx_std_17)
 set_target_properties(ch16_hello_world_apple PROPERTIES
     XCODE_ATTRIBUTE_CXX_LANGUAGE_STANDARD "c++17"    
     XCODE_ATTRIBUTE_ENABLE_HARDENED_RUNTIME[variant=Release] "YES"
+    XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "Apple Development"
 
 )
