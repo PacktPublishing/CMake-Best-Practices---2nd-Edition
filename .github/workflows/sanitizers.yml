@@ -92,5 +92,5 @@ jobs:
       - name: run-msvc-sanitizer
         working-directory: build-sanitizer
         run: |
-          "C:\Program Files\CMake\bin\ctest.exe" -v --output-on-failure -C Debug
+          "C:\Program Files\CMake\bin\ctest.exe" -V --output-on-failure -C Debug
         shell: cmd
