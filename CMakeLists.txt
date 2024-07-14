@@ -57,8 +57,12 @@ add_subdirectory(chapter07)
 add_subdirectory(chapter08)
 # the chapter 10 examples are intended to be built standalone
 # add_subdirectory(chapter10) 
+
+# add chapter 11 examples only on Apple platforms
+if(APPLE)
 add_subdirectory(chapter11)
+endif()
+
 add_subdirectory(chapter12)
 add_subdirectory(chapter13)
 add_subdirectory(chapter14)
-add_subdirectory(chapter16)
