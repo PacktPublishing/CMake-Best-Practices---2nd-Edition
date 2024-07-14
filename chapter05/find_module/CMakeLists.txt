@@ -12,7 +12,7 @@ project(
     LANGUAGES CXX
 )
 
-# The following example will look for a pre-built library in the folder ${CMAKE_CURRENT_BINARY_DIR}/dep. To use it build the project located in `dep_source`
+# The following example will look for a pre-built library in the folder ${CMAKE_CURRENT_BINARY_DIR}/dep. To use it build the project located in `dep`
 # first and install it in the directory `dep` of the current source tree
 
 # Tell CMake where to look for find modules

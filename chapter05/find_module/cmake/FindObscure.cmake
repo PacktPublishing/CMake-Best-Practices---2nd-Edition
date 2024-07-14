@@ -14,7 +14,7 @@ find_library(
 find_path(
     OBSCURE_INCLUDE_DIR
     NAMES obscure/obscure.hpp
-    HINTS ${PROJECT_SOURCE_DIR}/dep/include/ ${CMAKE_CURRENT_BINARY_DIR}/dep/include ${CMAKE_CURRENT_SOURCE_DIR}/dep_source/include
+    HINTS ${PROJECT_SOURCE_DIR}/dep/include/ ${CMAKE_CURRENT_BINARY_DIR}/dep/include ${CMAKE_CURRENT_SOURCE_DIR}/dep/include
 )
 
 # use the FindPackageHandleStandardArgs to check if everything was found
