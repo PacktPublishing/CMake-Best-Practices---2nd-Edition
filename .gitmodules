@@ -1,3 +1,3 @@
 [submodule "chapter05/conan_conanfile_example/cmake-conan"]
-	path = chapter05/conan_conanfile_example/cmake-conan
+	path = chapter05/conan_example/cmake-conan
 	url = https://github.com/conan-io/cmake-conan.git
