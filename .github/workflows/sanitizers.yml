@@ -59,6 +59,12 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Verify long path
+        run: |
+          Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1
+          Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled"
+
+
       - name: install-python-deps
         run: |
           python3 -m pip install --upgrade pip
@@ -86,8 +92,5 @@ jobs:
       - name: run-msvc-sanitizer
         working-directory: build-sanitizer
         run: |
-          set PATH="%PATH%;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64;C:\Program Files\CMake\bin"
-                                                                                                                             
-          echo %PATH%
           "C:\Program Files\CMake\bin\ctest.exe" -v --output-on-failure -C Debug
         shell: cmd
