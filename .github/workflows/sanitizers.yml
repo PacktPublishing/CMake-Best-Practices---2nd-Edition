@@ -14,7 +14,7 @@ concurrency:
 jobs:
   linux-sanitizers:
     name: linux-sanitizers
-    runs-on: ubuntu-22.0
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
@@ -26,12 +26,12 @@ jobs:
       - name: dependencies (debian-like)
         run: |
           sudo apt -y update
-          sudo apt -y install ninja-build clang-tidy          
+          sudo apt -y install ninja-build clang-tidy doxygen plantuml         
 
       - name: install-python-deps
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install
+          pip3 install conan
 
       - name: cmake-configure
         run: |
@@ -49,7 +49,7 @@ jobs:
   
   windows-sanitizers:
     name: windows-sanitizers
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v4
@@ -77,17 +77,18 @@ jobs:
 
       - name: cmake-configure
         run: |
-          cmake --preset=ci-msvc-19-sanitizer
+          cmake --preset=ci-msvc-22-sanitizer
 
       - name: build
         run: |
           cmake --build --preset=ci-msvc-debug-sanitizer
-
+      # Set the path variable so the necessary DLLs are found
+        shell: cmd
       - name: run-msvc-sanitizer
         working-directory: build-sanitizer
         run: |
-          set PATH="%PATH%;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.29.30133\bin\Hostx64\x64;C:\Program Files\CMake\bin"
-                                                                                                                             
+          set PATH="%PATH%;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\bin\Hostx64\x64;C:\Program Files\CMake\bin"
+                                                                                                                     
           echo %PATH%
-          "C:\Program Files\CMake\bin\ctest.exe" -v --output-on-failure -C Debug
+          "C:\Program Files\CMake\bin\ctest.exe" -V --output-on-failure -C Debug
         shell: cmd

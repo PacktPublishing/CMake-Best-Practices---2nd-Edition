@@ -57,7 +57,7 @@ jobs:
         working-directory: ./chapter12/android-example/
   arm:
     name: arm-crosscompiling
-    runs-on: ubuntu-22.0
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 

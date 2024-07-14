@@ -14,7 +14,7 @@ concurrency:
 jobs:
   linux-coverage:
     name: linux-coverage
-    runs-on: ubuntu-22.0
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +31,7 @@ jobs:
       - name: dependencies (debian-like)
         run: |
           sudo apt -y update
-          sudo apt -y install gcovr ninja-build clang-tidy
+          sudo apt -y install gcovr ninja-build clang-tidy doxygen plantuml lcov
 
       - name: cmake-configure
         run: |
@@ -67,7 +67,7 @@ jobs:
   
   windows-coverage:
     name: windows-coverage
-    runs-on: windows-2019
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v4
@@ -95,7 +95,7 @@ jobs:
 
       - name: cmake-configure
         run: |
-          cmake --preset=ci-msvc-19
+          cmake --preset=ci-msvc-22
 
       - name: build
         run: |

@@ -13,26 +13,26 @@ concurrency:
 
 jobs:
   ci:
-    name: ${{ matrix.name }}
+    name: ${{ matrix.os }}-${{ matrix.configurePreset}}
     runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: true
       matrix:
         name:
-          [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-19, windows-clang]
+          [ubuntu-gcc, ubuntu-clang, macos-appleclang, windows-msvc-22, windows-clang]
         include:
-          - name: ubuntu-gcc-10
-            os: ubuntu-22.0
-            compiler: g++-10
+          - name: ubuntu-gcc
+            os: ubuntu-22.04
+            compiler: g++
             configurePreset: ci-ninja-debug
 
-          - name: ubuntu-clang-12
-            os: ubuntu-22.0
-            compiler: clang++-12
+          - name: ubuntu-clang
+            os: ubuntu-22.04
+            compiler: clang++
             configurePreset: ci-ninja-debug
 
-          - name: macos-appleclang-12
+          - name: macos-appleclang
             os: macos-14
             configurePreset: ci-ninja-debug
 
@@ -71,7 +71,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install openssl plantuml ninja clang-format llvm
+          brew install plantuml ninja clang-format llvm
           brew install --cask doxygen
           
           ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"

@@ -15,7 +15,12 @@ project(
 # Locate Doxygen in the environment. This will set DOXYGEN_FOUND variable 
 # as a result. When Doxygen is found, DOXYGEN_VERSION variable will be 
 # also set to found Doxygen version.
-find_package(Doxygen REQUIRED)
+find_package(Doxygen)
+
+if(NOT DOXYGEN_FOUND)
+  message(STATUS "Doxygen is needed to build the documentation. Documentation example will not be built.")
+  return()
+endif()
 
 # Override the default doxygen output directory, which is CMAKE_CURRENT_BINARY_DIR. 
 set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/docs")
