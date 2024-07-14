@@ -13,14 +13,14 @@ concurrency:
 
 jobs:
   ci:
-    name: ${{ matrix.name }}
+    name: ${{ matrix.os }}-${{ matrix.configurePreset}}
     runs-on: ${{ matrix.os }}
 
     strategy:
       fail-fast: true
       matrix:
         name:
-          [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-19, windows-clang]
+          [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-22, windows-clang]
         include:
           - name: ubuntu-gcc-10
             os: ubuntu-22.0
