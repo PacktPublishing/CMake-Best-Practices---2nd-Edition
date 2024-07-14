@@ -31,7 +31,7 @@ jobs:
       - name: dependencies (debian-like)
         run: |
           sudo apt -y update
-          sudo apt -y install gcovr ninja-build clang-tidy
+          sudo apt -y install gcovr ninja-build clang-tidy doxygen plantuml
 
       - name: cmake-configure
         run: |
@@ -95,7 +95,7 @@ jobs:
 
       - name: cmake-configure
         run: |
-          cmake --preset=ci-msvc-19
+          cmake --preset=ci-msvc-22
 
       - name: build
         run: |

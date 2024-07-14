@@ -20,19 +20,19 @@ jobs:
       fail-fast: true
       matrix:
         name:
-          [ubuntu-gcc-10, ubuntu-clang-12, macos-appleclang-12, windows-msvc-22, windows-clang]
+          [ubuntu-gcc, ubuntu-clang, macos-appleclang, windows-msvc-22, windows-clang]
         include:
-          - name: ubuntu-gcc-10
+          - name: ubuntu-gcc
             os: ubuntu-22.04
-            compiler: g++-10
+            compiler: g++
             configurePreset: ci-ninja-debug
 
-          - name: ubuntu-clang-12
+          - name: ubuntu-clang
             os: ubuntu-22.04
-            compiler: clang++-12
+            compiler: clang++
             configurePreset: ci-ninja-debug
 
-          - name: macos-appleclang-12
+          - name: macos-appleclang
             os: macos-14
             configurePreset: ci-ninja-debug
 
