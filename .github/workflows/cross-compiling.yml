@@ -80,13 +80,15 @@ jobs:
 
       - name: run-emulator-test
         run: |
+          cd build
           ctest --verbose
-        working-directory: ./build
+        
 
       - name: run-emulator-bare
         run: |
+          cd build
           qemu-arm -L /usr/arm-linux-gnueabihf ./ch12_emulator_example
-        working-directory: ./build
+        
 
           
 
