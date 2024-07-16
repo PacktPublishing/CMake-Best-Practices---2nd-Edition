@@ -59,8 +59,9 @@ jobs:
     name: arm-crosscompiling
     runs-on: ubuntu-22.04
     defaults:
-      working-directory: ./chapter12/emulator-example/
-      
+      run:
+        working-directory: ./chapter12/emulator-example/
+
     steps:
       - uses: actions/checkout@v4
 
