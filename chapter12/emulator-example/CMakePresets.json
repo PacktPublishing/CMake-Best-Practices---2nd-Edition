@@ -1,0 +1,30 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 24,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "ninja-arm64-build-debug",
+            "generator": "Ninja",
+            "displayName": "Arm 64 Debug",
+            "toolchainFile": "${sourceDir}/arm64.toolchain.cmake",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "ninja-arm64-build-release",
+            "generator": "Ninja",
+            "displayName": "Arm 64 Debug",
+            "toolchainFile": "${sourceDir}/arm64.toolchain.cmake",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}

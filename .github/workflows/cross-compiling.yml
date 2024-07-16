@@ -58,6 +58,9 @@ jobs:
   arm:
     name: arm-crosscompiling
     runs-on: ubuntu-22.04
+    defaults:
+      working-directory: ./chapter12/emulator-example/
+      
     steps:
       - uses: actions/checkout@v4
 
@@ -68,7 +71,7 @@ jobs:
 
       - name: cmake-configure
         run: |
-          cmake -S ./chapter12/emulator-example -B build --toolchain=$(pwd)/chapter12/emulator-example/arm64.toolchain.cmake
+          cmake --preset ninja-arm64-build-debug
 
       - name: cmake-build
         run: |
