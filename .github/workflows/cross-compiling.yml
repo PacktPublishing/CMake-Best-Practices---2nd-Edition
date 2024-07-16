@@ -68,7 +68,7 @@ jobs:
       - name: install dependencies
         run: |
           sudo apt -y update
-          sudo apt -y install qemu qemu-system-arm gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user 
+          sudo apt -y install qemu qemu-system-arm gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-dev-armhf-cross qemu-user ninja-build
 
       - name: cmake-configure
         run: |
