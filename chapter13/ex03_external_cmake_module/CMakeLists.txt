@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 3.23)
 
 project(
-  ch13_ex03_hadouken
+  ch13_ex03_external_cmake_module
   VERSION 1.0
   DESCRIPTION "Chapter 13 Example 03, external CMake modules (hadouken) example"
   LANGUAGES CXX)
