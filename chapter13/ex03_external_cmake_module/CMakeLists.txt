@@ -17,14 +17,14 @@ include(FetchContent)
 FetchContent_Declare(hadouken
     GIT_REPOSITORY https://github.com/mustafakemalgilor/hadouken.git
     GIT_TAG        7d0447fcadf8e93d25f242b9bb251ecbcf67f8cb
-    SOURCE_DIR "${CMAKE_CURRENT_BINARY_DIR}/.hadouken"
+    SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/.hadouken"
 )
 
 # Fetch hadouken
 FetchContent_MakeAvailable(hadouken)
 
 # Add hadouken module directory to CMake module path
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_BINARY_DIR}/.hadouken/cmake/modules)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/.hadouken/cmake/modules)
 
 # Include some CMake modules provided by the Hadouken
 include(misc/Log)
