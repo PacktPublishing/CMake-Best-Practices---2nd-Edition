@@ -37,7 +37,7 @@ target_compile_features(
     ch5_find_package_example
     PRIVATE cxx_std_11
 )
-# Add source files to 'hello_world' target
+# Add source files to 'ch5_find_package_example' target
 target_sources(
     ch5_find_package_example
     PRIVATE src/main.cpp

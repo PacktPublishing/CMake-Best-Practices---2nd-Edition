@@ -1,14 +1,14 @@
-# Top-level CMakeLists file for the Chapter 1 example content.
+# Top-level CMakeLists file for the Chapter 11 example content.
 #
 # SPDX-License-Identifier: MIT
 
 cmake_minimum_required(VERSION 3.23)
 
 project(
-    chapter_16
+    chapter11
     VERSION 1.0
     DESCRIPTION
-        "Examples for chapter 16 of the CMake Best Practices book"
+        "Examples for chapter 11 of the CMake Best Practices Book - Apple specifics"
     LANGUAGES CXX OBJCXX
 )
 

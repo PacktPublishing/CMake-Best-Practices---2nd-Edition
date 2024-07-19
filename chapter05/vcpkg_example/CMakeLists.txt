@@ -25,7 +25,7 @@ target_compile_features(
     ch5_vcpkg_example
     PRIVATE cxx_std_11
 )
-# Add source files to 'hello_world' target
+# Add source files to 'ch5_vcpkg_example' target
 target_sources(
     ch5_vcpkg_example
     PRIVATE src/main.cpp

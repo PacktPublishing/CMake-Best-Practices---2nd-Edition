@@ -26,7 +26,7 @@ target_compile_features(
     conan_conanfile_example
     PRIVATE cxx_std_11
 )
-# Add source files to 'hello_world' target
+# Add source files to 'conan_conanfile_example' target
 target_sources(
     conan_conanfile_example
     PRIVATE src/main.cpp

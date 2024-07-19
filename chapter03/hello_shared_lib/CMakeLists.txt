@@ -22,6 +22,8 @@ set(CMAKE_DEBUG_POSTFIX
 
 # add the library target
 add_library(ch3_hello_shared SHARED)
+# Add an alis for the library target
+add_library(ch3_hello_shared::ch3_hello_shared ALIAS ch3_hello_shared)
 
 # set properties for the target. VERSION set the library version to the project
 # version * SOVERSION set the compatibility  version for the library to the
