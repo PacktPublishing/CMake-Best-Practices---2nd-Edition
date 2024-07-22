@@ -16,6 +16,7 @@ project(
 add_library(ch3_hello)
 add_library(ch3_hello::ch3_hello ALIAS ch3_hello)
 
+target_sources(ch3_hello PRIVATE src/hello.cpp)
 
 # set the include directories
 target_include_directories(
