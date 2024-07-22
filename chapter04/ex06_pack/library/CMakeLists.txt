@@ -20,7 +20,6 @@ target_compile_features(ch4_ex06_library PRIVATE cxx_std_11)
 # Specify the include directories for the target named `ch4_ex02_static`
 target_include_directories(ch4_ex06_library PUBLIC include)
 
-set_target_properties(ch4_ex06_library PROPERTIES PUBLIC_HEADER include/lib.hpp)
 
 include(GNUInstallDirs) # Defines the ${CMAKE_INSTALL_INCLUDEDIR} variable.
 
