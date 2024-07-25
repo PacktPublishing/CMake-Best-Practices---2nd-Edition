@@ -10,6 +10,7 @@ project(
   VERSION 1.0
   DESCRIPTION "A simple C++ project to demonstrate basic CMake usage"
   LANGUAGES CXX)
+include(CTest)
 add_executable(ch7_pass_fail_criteria)
 target_sources(ch7_pass_fail_criteria PRIVATE src/main.cpp)
 
