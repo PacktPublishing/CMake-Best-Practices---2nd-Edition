@@ -52,6 +52,8 @@ With the following software and hardware list you can run all code files present
 | 1 | CMake 3.21 | Windows, Mac OS X, and Linux (Any) |
 | 1 | GCC,Clang or MSVC | Windows, Mac OS X, and Linux (Any) |
 | 1 | Git | Windows, Mac OS X, and Linux (Any) |
+| 1 | Lib OpenSSL (Optional for chapter 6) | Windows, Mac OS X, and Linux (Any) |
+
 
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781803239729_ColorImages.pdf).
@@ -62,19 +64,10 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Free eBook - Learn Kali Linux 2019 [[Packt]](https://www.packtpub.com/free-ebook/learn-kali-linux-2019/9781789611809?utm_source=github&utm_medium=repository&utm_campaign=) [[Amazon]](https://www.amazon.com/dp/1789611806)
 
 
-## Errata
-
-
-* Page 107 (last line): **make -build ./build cmake -install ./build --prefix /tmp/install-test** _should be_ **make --build ./build cmake --install ./build --prefix /tmp/install-test**
-
-
-
 ## Get to Know the Author
+
 **Dominik Berner**
 is a software engineer, blogger and conference speaker with 20 years of professional software development under his belt. He codes mainly in C++ and has worked on many software projects, from writing bleeding edge software for surgical simulators in a startup, over maintaining large legacy platforms for large corporations in the MedTech industry to creating IoT solutions for companies in between. He beliefs that well designed and maintained build environments are one of the key elements to enable teams to write software efficiently and excel at creating quality software. When he is not writing code, he occasionally writes articles for his blog or speaks at conferences about software development.
-
-**Mustafa Kemal**
-is an experienced professional working in performance-critical software development for the telecommunication, defense industries, and open-source software. His expertise is in high-performance and scalable software design, network technologies, DevOps, and software architecture. His interest in computers emerged very early on in his childhood. He learned programming to hack MMORPG games at around the age of 12, and he has been writing software ever since. His favorite programming language is C++, and he enjoys doing framework design & system programming. He is also a strong advocate of CMake; he maintained many codebases and ported many legacy projects to CMake throughout his career.
 
 ### Download a free PDF
 

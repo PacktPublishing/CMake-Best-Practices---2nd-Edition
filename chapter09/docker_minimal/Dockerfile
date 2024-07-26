@@ -1,3 +1,3 @@
-FROM alpine:3.15
+FROM alpine:3.20.2
 
 RUN apk add --no-cache cmake ninja g++ bash make
