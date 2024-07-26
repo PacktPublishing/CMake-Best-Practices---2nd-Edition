@@ -13,7 +13,7 @@ project(
   ch12_emulator_example
   VERSION 1.0
   DESCRIPTION "A simple C++ project to demonstrate basic CMake usage"
-  LANGUAGES CXX)
+  LANGUAGES CXX C)
 
 # enable testing
 include(CTest)
