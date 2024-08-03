@@ -30,10 +30,11 @@ jobs:
           echo "TMP=$env:USERPROFILE\AppData\Local\Temp" >> $env:GITHUB_ENV
         shell: pwsh
 
-      - name: vcvarsall
-        run: |
-          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
-        shell: cmd
+       #this internally calls the vcvarsall.bat script to setup the environment
+      - name: setup-msvc-dev
+        uses: TheMrMilchmann/setup-msvc-dev@v3
+        with:
+          arch: x64
 
       - name: cmake-configure
         run: |
