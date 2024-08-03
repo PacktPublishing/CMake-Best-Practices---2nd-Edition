@@ -38,7 +38,7 @@ jobs:
 
       - name: cmake-configure
         run: |
-          cmake -S . -B ./build -GNinja -DCH10_EX03_SUPERBUILD=ON -DCMAKE_BUILD_TYPE=Debug
+          cmake -S . -B ./build -GNinja -DCH10_EX03_USE_SUPERBUILD=ON -DCMAKE_BUILD_TYPE=Debug
         working-directory: chapter10/ex03_simple_qt_app
 
       - name: build
