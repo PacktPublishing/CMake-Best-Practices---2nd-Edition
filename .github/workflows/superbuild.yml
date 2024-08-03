@@ -1,4 +1,4 @@
-name: Sanitizers
+name: Superbuild example
 
 on:
   push:
@@ -32,8 +32,8 @@ jobs:
 
       - name: vcvarsall
         run: |
-          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
-          shell: cmd
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
+        shell: cmd
 
       - name: cmake-configure
         run: |
