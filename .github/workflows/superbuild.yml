@@ -1,0 +1,46 @@
+name: Sanitizers
+
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+    
+
+jobs:
+  windows-superbuild:
+    name: windows-superbuild
+    runs-on: windows-2022
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: dependencies (windows)
+        run: |
+          choco install -y --limit-output ninja
+          choco install -y --limit-output openssl --version="3.1.1"
+
+      - name: correct-tmp-dir (win)
+        run: |
+          echo "TEMP=$env:USERPROFILE\AppData\Local\Temp" >> $env:GITHUB_ENV
+          echo "TMP=$env:USERPROFILE\AppData\Local\Temp" >> $env:GITHUB_ENV
+        shell: pwsh
+
+      - name: vcvarsall
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x64
+          shell: cmd
+
+      - name: cmake-configure
+        run: |
+          cmake -S . -B ./build -GNinja -DCH10_EX03_SUPERBUILD=ON -DCMAKE_BUILD_TYPE=Debug
+        working-directory: chapter10/ex03_simple_qt_app
+
+      - name: build
+        run: |
+          cmake --build ./build 
+        working-directory: chapter10/ex03_simple_qt_app
