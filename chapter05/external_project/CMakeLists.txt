@@ -33,7 +33,7 @@ set(BERTRAND_INSTALL_DIR "${INSTALL_DIR}")
 ExternalProject_Add_Step(bertrand copy_license 
                         COMMAND ${CMAKE_COMMAND} -E tar "cvzf" 
                                 ${CMAKE_CURRENT_BINARY_DIR}/licenses.tar.gz <SOURCE_DIR>/LICENSE 
-                        DEPENDEES build
+                        DEPENDENCIES build
                         ALWAYS YES
 )
 

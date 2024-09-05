@@ -13,7 +13,7 @@ project(
 
 find_program(CPPCHECK_EXECUTABLE NAMES cppcheck)
 
-# search for the cppcheck exectuable if it exists enable it
+# search for the cppcheck executable if it exists enable it
 if(CPPCHECK_EXECUTABLE)
   option(ENABLE_CPPCHECK "Enable cppcheck" ON)
   
