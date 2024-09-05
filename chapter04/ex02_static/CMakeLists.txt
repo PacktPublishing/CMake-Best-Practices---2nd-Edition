@@ -28,11 +28,11 @@ target_include_directories(
 )
 
 # Request compile features for target named `ch4_ex02_static`. Requested
-# `cxx_std_11` feature determines the minimum C++ standard required to build
+# `cxx_std_17` feature determines the minimum C++ standard required to build
 # this target. It's PRIVATE, since it is a build-time requirement only.
 target_compile_features(
     ch4_ex02_static
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 include(GNUInstallDirs) # Defines the ${CMAKE_INSTALL_INCLUDEDIR} variable.

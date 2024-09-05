@@ -27,7 +27,7 @@ target_link_libraries(
 
 target_compile_features(
     ch2_driver_application
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_17
 )
 
 install(

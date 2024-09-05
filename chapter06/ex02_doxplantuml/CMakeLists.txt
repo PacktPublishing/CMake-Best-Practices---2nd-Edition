@@ -74,7 +74,7 @@ add_executable(
 # Compile features for the executable target
 target_compile_features(
     ch6_ex02_doxplantuml
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 doxygen_add_docs(

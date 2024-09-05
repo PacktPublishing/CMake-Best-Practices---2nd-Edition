@@ -22,11 +22,11 @@ target_sources(
 )
 
 # Request compile features for target named `ch4_ex01_executable`. Requested
-# `cxx_std_11` feature determines the minimum C++ standard required to build
+# `cxx_std_17` feature determines the minimum C++ standard required to build
 # this target. It's PRIVATE, since it is a build-time requirement only.
 target_compile_features(
     ch4_ex01_executable
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 # Make executable target `ch4_ex01_executable` installable. As mentioned before

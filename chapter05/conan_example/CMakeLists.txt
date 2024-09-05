@@ -33,7 +33,7 @@ add_executable(conan_conanfile_example)
 
 target_compile_features(
     conan_conanfile_example
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Add source files to 'conan_conanfile_example' target
 target_sources(

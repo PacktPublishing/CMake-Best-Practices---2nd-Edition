@@ -22,7 +22,7 @@ target_include_directories(
 )
 target_compile_features(
     ch7_coverage_example
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_17
 )
 target_sources(
     ch7_coverage_example

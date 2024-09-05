@@ -21,7 +21,7 @@ add_library(
 # Set the required C++ standard for the target
 target_compile_features(
     ch4_ex07_library
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 # Specify the include directories for the target named `ch4_ex02_static`

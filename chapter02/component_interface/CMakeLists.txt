@@ -17,7 +17,7 @@ target_include_directories(
 
 target_compile_features(
     ch2_framework_component_interface
-    INTERFACE cxx_std_11
+    INTERFACE cxx_std_17
 )
 
 # Make specified target(s) installable. Separate them to components.

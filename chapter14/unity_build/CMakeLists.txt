@@ -15,7 +15,7 @@ project(
 add_executable(ch14_unity_build)
 target_compile_features(
     ch14_unity_build
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 target_sources(

@@ -23,7 +23,7 @@ add_executable(ch5_vcpkg_example)
 
 target_compile_features(
     ch5_vcpkg_example
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Add source files to 'ch5_vcpkg_example' target
 target_sources(

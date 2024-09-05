@@ -43,7 +43,7 @@ target_link_libraries(
 
 target_compile_features(
     ch5_find_module_example
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Add source files to 'ch5_find_module_example' target
 target_sources(

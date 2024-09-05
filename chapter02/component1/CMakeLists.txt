@@ -30,7 +30,7 @@ target_link_libraries(
 
 target_compile_features(
     ch2_framework_component1
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_17
 )
 
 # Make specified target(s) installable. Separate them to components.

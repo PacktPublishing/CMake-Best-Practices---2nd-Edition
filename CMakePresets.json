@@ -72,7 +72,7 @@
             "hidden": true,
             "cacheVariables": {
                 "CMAKE_CXX_CLANG_TIDY":
-                    "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize*,-modernize-use-trailing-return-type,-modernize-macro-to-enum,-modernize-concat-nested-namespaces;-extra-arg=-std=c++20"
+                    "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize*,-modernize-use-trailing-return-type,-modernize-macro-to-enum,-modernize-concat-nested-namespaces;-extra-arg=-std=c++17"
             }
         },
         {
@@ -104,7 +104,16 @@
             "inherits": "ccache-env",
             "generator": "Ninja",
             "hidden": true,
-            "binaryDir": "${sourceDir}/build"
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "uninitialized": true
+            }
         },
         {
             "name": "ci-ninja-debug",

@@ -22,7 +22,7 @@ target_sources(
 )
 target_compile_features(
     ch14_unity_build_group
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 # Enable unity build for the target by default BATCH mode is used for unity

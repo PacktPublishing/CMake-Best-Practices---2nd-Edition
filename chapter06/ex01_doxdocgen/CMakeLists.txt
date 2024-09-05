@@ -93,11 +93,11 @@ target_include_directories(
     PUBLIC include
 )
 # Request compile features for target named `ch6_ex01_doxdocgen_lib`. Requested
-# `cxx_std_11` feature determines the minimum C++ standard required to build
+# `cxx_std_17` feature determines the minimum C++ standard required to build
 # this target. It's PRIVATE, since it is a build-time requirement only.
 target_compile_features(
     ch6_ex01_doxdocgen_lib
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Create an executable target that consumes the library
 add_executable(
@@ -107,7 +107,7 @@ add_executable(
 # Compile features for the executable target
 target_compile_features(
     ch6_ex01_doxdocgen_exe
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Link static library to executable
 target_link_libraries(

@@ -37,11 +37,11 @@ target_include_directories(
 )
 
 # Request compile features for target named `ch4_ex05_lib`. Requested
-# `cxx_std_11` feature determines the minimum C++ standard required to build
+# `cxx_std_17` feature determines the minimum C++ standard required to build
 # this target. It's PRIVATE, since it is a build-time requirement only.
 target_compile_features(
     ch4_ex05_lib
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_17
 )
 
 # Until now, it is just regular target definition ... interesting stuff begins

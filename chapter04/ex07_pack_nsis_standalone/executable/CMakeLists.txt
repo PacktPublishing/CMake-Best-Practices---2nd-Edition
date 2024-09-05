@@ -21,7 +21,7 @@ add_executable(
 # Set the required C++ standard for the target
 target_compile_features(
     ch4_ex07_executable
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 # Link executable target to library target

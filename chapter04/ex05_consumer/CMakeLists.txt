@@ -50,7 +50,7 @@ add_executable(
 # Set the required C++ standard for the target
 target_compile_features(
     ch4_ex05_consumer
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 
 # Link executable to ch4_ex05_lib package found by find_package() before. Target

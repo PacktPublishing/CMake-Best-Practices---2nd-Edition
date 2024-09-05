@@ -119,7 +119,7 @@ target_include_directories(
 )
 target_compile_features(
     ch7_custom_build_type
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_17
 )
 target_sources(
     ch7_custom_build_type
@@ -134,7 +134,7 @@ target_link_libraries(ch7_custom_build_type_test ch7_custom_build_type)
 
 target_compile_features(
     ch7_custom_build_type_test
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 add_test(
     NAME code_coverage_test
