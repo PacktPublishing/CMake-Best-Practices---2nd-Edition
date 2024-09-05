@@ -6,7 +6,7 @@
 # Specifies the minimum required CMake version to build this project (and
 # subprojects) Subprojects may override this value by specifying another version
 # requirement in their CMakeLists file (e.g. require a later version of CMake)
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 # The main project
 project(
@@ -25,7 +25,9 @@ set(CMAKE_BUILD_TYPE
     CACHE STRING "Default build type for single-config generators"
 )
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
+set(CMAKE_EXPORT_COMPILE_COMMANDS
+    TRUE
+)
 
 # Print generator type and build type (if applicable)
 get_property(
@@ -39,11 +41,14 @@ else()
     message(STATUS "Using a multi-config generator (${CMAKE_GENERATOR})")
 endif()
 
-
 find_program(CCACHE_PROGRAM ccache)
 if(CCACHE_PROGRAM)
-    set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE_PROGRAM})
-    set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE_PROGRAM})
+    set(CMAKE_C_COMPILER_LAUNCHER
+        ${CCACHE_PROGRAM}
+    )
+    set(CMAKE_CXX_COMPILER_LAUNCHER
+        ${CCACHE_PROGRAM}
+    )
 endif()
 
 # Add chapter examples to root project
@@ -56,11 +61,11 @@ add_subdirectory(chapter06)
 add_subdirectory(chapter07)
 add_subdirectory(chapter08)
 # the chapter 10 examples are intended to be built standalone
-# add_subdirectory(chapter10) 
+# add_subdirectory(chapter10)
 
 # add chapter 11 examples only on Apple platforms
 if(APPLE)
-add_subdirectory(chapter11)
+    add_subdirectory(chapter11)
 endif()
 
 add_subdirectory(chapter12)

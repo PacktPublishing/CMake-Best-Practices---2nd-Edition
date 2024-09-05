@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch14_precompiled_headers
@@ -16,13 +16,21 @@ project(
 add_executable(ch14_precompiled_headers)
 
 # Add sources to the executable target
-target_sources(ch14_precompiled_headers PRIVATE 
-                src/main.cpp
-                src/fibonacci.cpp
-                src/eratosthenes.cpp
-                src/pythagoras.cpp
-                )
+target_sources(
+    ch14_precompiled_headers
+    PRIVATE src/main.cpp
+            src/fibonacci.cpp
+            src/eratosthenes.cpp
+            src/pythagoras.cpp
+)
 
-# Add headers to the generated precompiled header for target ch14_precompiled_headers
-target_precompile_headers(ch14_precompiled_headers PRIVATE 
-src/fibonacci.h <cstdint> <vector> src/eratosthenes.h)
+# Add headers to the generated precompiled header for target
+# ch14_precompiled_headers
+target_precompile_headers(
+    ch14_precompiled_headers
+    PRIVATE
+    src/fibonacci.h
+    <cstdint>
+    <vector>
+    src/eratosthenes.h
+)

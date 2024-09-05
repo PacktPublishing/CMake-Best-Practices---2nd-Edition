@@ -1,15 +1,16 @@
-# CMakeLists file for the Chapter 13 Example nr. 01: 
+# CMakeLists file for the Chapter 13 Example nr. 01:
 # Git utility module
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
-  ch13_ex01_git_module
-  VERSION 1.0
-  DESCRIPTION "Chapter 13 Example 01, git utility module example"
-  LANGUAGES CXX)
+    ch13_ex01_git_module
+    VERSION 1.0
+    DESCRIPTION "Chapter 13 Example 01, git utility module example"
+    LANGUAGES CXX
+)
 
 include(cmake/git.cmake)
 

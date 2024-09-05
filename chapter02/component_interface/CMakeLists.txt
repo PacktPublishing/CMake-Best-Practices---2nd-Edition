@@ -11,13 +11,20 @@ project(
 
 add_library(ch2_framework_component_interface INTERFACE)
 target_include_directories(
-  ch2_framework_component_interface INTERFACE include/
+    ch2_framework_component_interface
+    INTERFACE include/
 )
 
-target_compile_features(ch2_framework_component_interface INTERFACE cxx_std_11)
+target_compile_features(
+    ch2_framework_component_interface
+    INTERFACE cxx_std_11
+)
 
 # Make specified target(s) installable. Separate them to components.
-install(TARGETS ch2_framework_component_interface COMPONENT ch2.libraries)
+install(
+    TARGETS ch2_framework_component_interface
+    COMPONENT ch2.libraries
+)
 
 # Install the headers
 install(

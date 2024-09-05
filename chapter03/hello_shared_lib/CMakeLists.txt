@@ -1,10 +1,10 @@
 # Chapter3- example illustrating how to create a shared library
-# Additionally the example shows how to set a postfix for debug libraries and 
+# Additionally the example shows how to set a postfix for debug libraries and
 # how to handle symbol visibilities for shared libraries
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch3_hello_shared
@@ -23,7 +23,11 @@ set(CMAKE_DEBUG_POSTFIX
 # add the library target
 add_library(ch3_hello_shared SHARED)
 # Add an alis for the library target
-add_library(ch3_hello_shared::ch3_hello_shared ALIAS ch3_hello_shared)
+add_library(
+    ch3_hello_shared::ch3_hello_shared
+    ALIAS
+    ch3_hello_shared
+)
 
 # set properties for the target. VERSION set the library version to the project
 # version * SOVERSION set the compatibility  version for the library to the

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch3_hello_header_only
@@ -15,6 +15,12 @@ project(
 add_library(ch3_hello_header_only INTERFACE)
 
 # expose the include directories
-target_include_directories(ch3_hello_header_only INTERFACE include/)
+target_include_directories(
+    ch3_hello_header_only
+    INTERFACE include/
+)
 # expose the minimum C++ standard needed to compile this library
-target_compile_features(ch3_hello_header_only INTERFACE cxx_std_17)
+target_compile_features(
+    ch3_hello_header_only
+    INTERFACE cxx_std_17
+)
