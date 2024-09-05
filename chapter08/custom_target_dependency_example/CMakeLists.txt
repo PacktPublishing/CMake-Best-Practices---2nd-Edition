@@ -1,4 +1,4 @@
-# Chapter 8 example to illustrate using a custom target with an implicit dependency on another target
+# Chapter 8 example to illustrate using a custom target with an dependency on another target
 #
 # SPDX-License-Identifier: MIT
 
@@ -8,7 +8,7 @@ project(
     ch8_generate_hash_using_a_target
     VERSION 1.0
     DESCRIPTION
-        "A simple C++ project to demonstrate creation of a custom target that implicitly depends on another one"
+        "A simple C++ project to demonstrate creation of a custom target that depends on another one"
     LANGUAGES CXX
 )
 
@@ -17,11 +17,12 @@ project(
 # generator expression implcitely adds the dependency between the targets. the
 # ALL keyword adds the custom target to the ALL meta-target
 add_custom_target(
-    ch8_create_hash ALL
+    ch8_create_hash # XXX ALL
     COMMAND
         cmake -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/CreateSha256.cmake
         $<TARGET_FILE:ch8_generate_hash_using_a_target>
         ${CMAKE_CURRENT_BINARY_DIR}/hash_example.sha256
+    DEPENDS ch8_generate_hash_using_a_target
     COMMENT
         "Creating sha256 hash using a custom target $<TARGET_FILE:ch8_generate_hash_using_a_target>"
 )

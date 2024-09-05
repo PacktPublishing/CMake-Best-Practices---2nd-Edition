@@ -26,7 +26,7 @@ list(
 # the variable ${MYLIST} to be expanded as a string. if this is not set B and C
 # will be treated as separate commands
 add_custom_target(
-    ch8_echo_target ALL
+    ch8_echo_target # XXX ALL
     COMMAND cmake -E echo "Hello from a custom target in chapter 8 ${MYLIST}"
     COMMAND_EXPAND_LISTS
 )
