@@ -55,7 +55,8 @@
             "name": "cppcheck",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_CPPCHECK": "cppcheck;--enable=warning;--inconclusive;--force;--inline-suppr"
+                "CMAKE_CXX_CPPCHECK":
+                    "cppcheck;--enable=warning;--inconclusive;--force;--inline-suppr"
             }
         },
         {
@@ -70,7 +71,8 @@
             "name": "clang-tidy",
             "hidden": true,
             "cacheVariables": {
-               "CMAKE_CXX_CLANG_TIDY": "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize*,-modernize-use-trailing-return-type;-extra-arg=-std=c++17"
+                "CMAKE_CXX_CLANG_TIDY":
+                    "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize*,-modernize-use-trailing-return-type,-modernize-macro-to-enum,-modernize-concat-nested-namespaces;-extra-arg=-std=c++20"
             }
         },
         {
@@ -84,7 +86,8 @@
             "name": "iwyu",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_INCLUDE_WHAT_YOU_USE": "iwyu;-Xiwyu;any;-Xiwyu;iwyu;-Xiwyu"
+                "CMAKE_CXX_INCLUDE_WHAT_YOU_USE":
+                    "iwyu;-Xiwyu;any;-Xiwyu;iwyu;-Xiwyu"
             }
         },
         {
@@ -192,7 +195,8 @@
                 "ci-ninja-debug"
             ],
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.github/toolchain/clang-on-windows-toolchain.cmake"
+                "CMAKE_TOOLCHAIN_FILE":
+                    "${sourceDir}/.github/toolchain/clang-on-windows-toolchain.cmake"
             },
             "condition": {
                 "type": "equals",
