@@ -9,7 +9,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 
 jobs:
   linux-sanitizers:
@@ -26,7 +26,7 @@ jobs:
       - name: dependencies (debian-like)
         run: |
           sudo apt -y update
-          sudo apt -y install ninja-build clang-tidy doxygen plantuml         
+          sudo apt -y install ninja-build clang-tidy doxygen plantuml
 
       - name: install-python-deps
         run: |
@@ -39,14 +39,14 @@ jobs:
 
       - name: build
         run: |
-          cmake --build ./build 
+          cmake --build ./build
         shell: bash
 
       - name: ctest
         run: |
           ctest -V --test-dir build
         shell: bash
-  
+
   windows-sanitizers:
     name: windows-sanitizers
     runs-on: windows-2022
@@ -88,7 +88,7 @@ jobs:
         working-directory: build-sanitizer
         run: |
           set PATH="%PATH%;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.40.33807\bin\Hostx64\x64;C:\Program Files\CMake\bin"
-                                                                                                                     
+
           echo %PATH%
           "C:\Program Files\CMake\bin\ctest.exe" -V -C Debug
         shell: cmd

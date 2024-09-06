@@ -9,7 +9,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 
 jobs:
   ci:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         name:
           [ubuntu-gcc, ubuntu-clang, macos-appleclang, windows-msvc-22, windows-clang]
@@ -57,7 +57,7 @@ jobs:
       - name: install-python-deps
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install pytest pytest-depends conan cpplint 
+          pip3 install pytest pytest-depends conan cpplint
 
       - name: set-compiler-env
         run: |
@@ -73,7 +73,7 @@ jobs:
           brew update
           brew install plantuml ninja clang-format llvm
           brew install --cask doxygen
-          
+
           ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"
 
       - name: dependencies (windows)
@@ -83,7 +83,7 @@ jobs:
           choco install -y --limit-output doxygen.install --version="1.9.2"
           choco install openssl --version 3.1.1 -y
           echo "OPENSSL_ROOT_DIR=C:/Program Files/OpenSSL/" >> $GITHUB_ENV
-                            
+
         shell: bash
 
       - name: dependencies (debian-like)
@@ -106,7 +106,7 @@ jobs:
       - name: build
         run: |
           if [ "${{ matrix.buildPreset }}" == "" ]; then
-            cmake --build ./build 
+            cmake --build ./build
           else
             cmake --build --preset=${{ matrix.buildPreset }}
           fi

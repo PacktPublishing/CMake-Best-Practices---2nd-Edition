@@ -9,7 +9,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 
 jobs:
   windows-superbuild:
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: dependencies (windows)
         run: |
           choco install -y --limit-output ninja
@@ -49,5 +49,5 @@ jobs:
 
       - name: build
         run: |
-          cmake --build ./build 
+          cmake --build ./build
         working-directory: ./ch10_ex03

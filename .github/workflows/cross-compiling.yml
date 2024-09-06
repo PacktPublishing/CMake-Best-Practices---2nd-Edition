@@ -9,7 +9,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 
 jobs:
   ios:
@@ -41,7 +41,7 @@ jobs:
           add-to-path: false
 
       - uses: actions/checkout@v4
-      
+
       - name: cmake-configure
         run: |
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release --toolchain=${ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake
@@ -82,13 +82,9 @@ jobs:
         run: |
           cd build
           ctest --verbose
-        
+
 
       - name: run-emulator-bare
         run: |
           cd build
           qemu-arm -L /usr/arm-linux-gnueabihf ./ch12_emulator_example
-        
-
-          
-
