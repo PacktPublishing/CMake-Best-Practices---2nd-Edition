@@ -4,22 +4,23 @@ IndentWidth: 4
 UseTab: Never
 ---
 Language: Cpp
-BasedOnStyle: Google
-# BasedOnStyle: WebKit
-# ColumnLimit: 123
-AccessModifierOffset: -2
+BasedOnStyle: WebKit
+# XXX ColumnLimit: 123
+AccessModifierOffset: -4
 AllowShortIfStatementsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: Inline
-ConstructorInitializerIndentWidth: 2
-ContinuationIndentWidth: 2
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth: 4
 DerivePointerAlignment: false
-IndentWidth: 2
+IndentWidth: 4
+InsertBraces: true
 InsertNewlineAtEOF: true
+NamespaceIndentation: None
 PointerAlignment: Right
-SpacesBeforeTrailingComments: 0
+SpacesBeforeTrailingComments: 1
 UseTab: Never
 #
 AlignTrailingComments:
-  # Kind: Never
+  # XXX Kind: Never
   Kind: Always
   OverEmptyLines: 1
