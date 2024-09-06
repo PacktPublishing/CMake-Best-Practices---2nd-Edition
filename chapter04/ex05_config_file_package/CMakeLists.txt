@@ -24,17 +24,25 @@ set(ch4_ex05_lib_INSTALL_CMAKEDIR
 # Define a static library target named `ch4_ex05_lib`
 add_library(ch4_ex05_lib STATIC)
 
+# cmake-format: off
 # Specify source files for target named `ch4_ex05_lib`
 target_sources(
     ch4_ex05_lib
     PRIVATE src/lib.cpp
+    PUBLIC FILE_SET
+        HEADERS
+            BASE_DIRS
+                ${CMAKE_CURRENT_SOURCE_DIR}/include
+            FILES
+                ${CMAKE_CURRENT_SOURCE_DIR}/include/chapter4/ex05/lib.hpp
 )
+# cmake-format: on
 
-# Specify the include directories for the target named `ch4_ex05_lib`
-target_include_directories(
-    ch4_ex05_lib
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-)
+# Files in a PRIVATE or PUBLIC FILE_SET set are marked as source files for the
+# purposes of IDE integration. Additionally, files in HEADERS file sets have
+# their HEADER_FILE_ONLY property set to TRUE. Files in an INTERFACE or PUBLIC
+# FILE_SET can be installed with the install(TARGETS) command, and exported with
+# the install(EXPORT) and export() commands.
 
 # Request compile features for target named `ch4_ex05_lib`. Requested
 # `cxx_std_17` feature determines the minimum C++ standard required to build
@@ -60,14 +68,7 @@ install(
                             # for the exports. The install(EXPORT) call does the
                             # actual target exporting.
     # Will be appended to INTERFACE_INCLUDE_DIRECTORIES of exported targets.
-    INCLUDES
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
-
-# Install the header files. Since header files are not listed as output
-# artifacts, they have to be installed separately.
-install(
-    DIRECTORY ${PROJECT_SOURCE_DIR}/include/
+    INCLUDES FILE_SET HEADERS
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
 )
 
