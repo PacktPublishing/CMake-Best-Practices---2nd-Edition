@@ -55,7 +55,8 @@
             "name": "cppcheck",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_CPPCHECK": "cppcheck;--enable=warning;--inconclusive;--force;--inline-suppr"
+                "CMAKE_CXX_CPPCHECK":
+                    "cppcheck;--enable=warning;--inconclusive;--force;--inline-suppr"
             }
         },
         {
@@ -70,7 +71,8 @@
             "name": "clang-tidy",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_CLANG_TIDY": "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize-use-nullptr;-extra-arg=-std=c++17"
+                "CMAKE_CXX_CLANG_TIDY":
+                    "clang-tidy;--header-filter=${sourceDir}/*;-checks=-*,modernize*,-modernize-use-trailing-return-type,-modernize-macro-to-enum,-modernize-concat-nested-namespaces;-extra-arg=-std=c++17"
             }
         },
         {
@@ -84,7 +86,8 @@
             "name": "iwyu",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_INCLUDE_WHAT_YOU_USE": "iwyu;-Xiwyu;any;-Xiwyu;iwyu;-Xiwyu"
+                "CMAKE_CXX_INCLUDE_WHAT_YOU_USE":
+                    "iwyu;-Xiwyu;any;-Xiwyu;iwyu;-Xiwyu"
             }
         },
         {
@@ -101,7 +104,16 @@
             "inherits": "ccache-env",
             "generator": "Ninja",
             "hidden": true,
-            "binaryDir": "${sourceDir}/build"
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_EXTENSIONS": false,
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": true
+            },
+            "warnings": {
+                "deprecated": true,
+                "uninitialized": true
+            }
         },
         {
             "name": "ci-ninja-debug",
@@ -192,7 +204,8 @@
                 "ci-ninja-debug"
             ],
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/.github/toolchain/clang-on-windows-toolchain.cmake"
+                "CMAKE_TOOLCHAIN_FILE":
+                    "${sourceDir}/.github/toolchain/clang-on-windows-toolchain.cmake"
             },
             "condition": {
                 "type": "equals",
@@ -220,7 +233,7 @@
     "buildPresets": [
         {
             "name": "ci-ninja-debug-build",
-            "configurePreset": "ci-ninja-debug"
+            "configurePreset": "ci-ninja-debug-tidy"
         },
         {
             "name": "ci-msvc-debug",
@@ -256,7 +269,7 @@
     "testPresets": [
         {
             "name": "ci-unit-tests-debug",
-            "configurePreset": "ci-ninja-debug",
+            "configurePreset": "ci-ninja-debug-tidy",
             "configuration": "Debug",
             "output": {
                 "outputOnFailure": true
@@ -287,7 +300,7 @@
     "packagePresets": [
         {
             "name": "ci-package-tgz",
-            "configurePreset": "ci-ninja-debug",
+            "configurePreset": "ci-ninja-debug-tidy",
             "generators": [
                 "TGZ"
             ],
@@ -302,7 +315,7 @@
             "steps": [
                 {
                     "type": "configure",
-                    "name": "ci-ninja-debug"
+                    "name": "ci-ninja-debug-tidy"
                 },
                 {
                     "type": "build",

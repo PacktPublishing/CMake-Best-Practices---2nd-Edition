@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch3_hello_world_standalone
@@ -15,4 +15,7 @@ project(
 # Create a target to build an executable
 add_executable(ch3_hello_world)
 # Add source files to 'hello_world' target
-target_sources(ch3_hello_world PRIVATE src/main.cpp)
+target_sources(
+    ch3_hello_world
+    PRIVATE src/main.cpp
+)

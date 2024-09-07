@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch3_hello_static
@@ -15,13 +15,12 @@ project(
 # add the library target
 add_library(ch3_hello_static STATIC)
 
-# Set the output of the target to `hello` so it will be saved as hello.dll on windows
-# and libhello.a on linux
+# Set the output of the target to `hello` so it will be saved as hello.dll on
+# windows and libhello.a on linux
 set_target_properties(
     ch3_hello_static
     PROPERTIES OUTPUT_NAME hello
 )
-
 
 # set properties for the target. VERSION set the library version to the project
 # version * SOVERSION set the compatibility  version for the library to the

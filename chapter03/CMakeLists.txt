@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     chapter_3
@@ -23,7 +23,15 @@ add_subdirectory(hello_object_lib)
 # add an example executable
 add_executable(chapter3)
 # add sources to the example executable
-target_sources(chapter3 PRIVATE src/main.cpp)
+target_sources(
+    chapter3
+    PRIVATE src/main.cpp
+)
 # link libraries "hello" and "hello_header_only" to the example executable the
 # libraries are described in the subdirectories
-target_link_libraries(chapter3 PRIVATE ch3_hello_header_only ch3_hello_shared ch3_hello_object)
+target_link_libraries(
+    chapter3
+    PRIVATE ch3_hello_header_only
+            ch3_hello_shared
+            ch3_hello_object
+)

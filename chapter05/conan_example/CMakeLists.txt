@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     conan_conanfile_example
@@ -12,11 +12,20 @@ project(
     LANGUAGES CXX
 )
 
-# Append the current binary dir to CMAKE_PREFIX_PATH so the conan package are found
-list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_BINARY_DIR})
+# Append the current binary dir to CMAKE_PREFIX_PATH so the conan package are
+# found
+list(
+    APPEND
+    CMAKE_PREFIX_PATH
+    ${CMAKE_CURRENT_BINARY_DIR}
+)
 
 # find the just downloaded package
-find_package(fmt 10.2.1 REQUIRED)
+find_package(
+    fmt
+    10.2.1
+    REQUIRED
+)
 
 # Create a target to build an executable
 add_executable(conan_conanfile_example)
@@ -24,7 +33,7 @@ add_executable(conan_conanfile_example)
 
 target_compile_features(
     conan_conanfile_example
-    PRIVATE cxx_std_11
+    PRIVATE cxx_std_17
 )
 # Add source files to 'conan_conanfile_example' target
 target_sources(

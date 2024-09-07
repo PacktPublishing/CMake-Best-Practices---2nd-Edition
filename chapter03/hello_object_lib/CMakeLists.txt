@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch3_hello_object
@@ -16,11 +16,17 @@ project(
 add_library(ch3_hello_object OBJECT)
 
 # add sources to the library target
-target_sources(ch3_hello_object PRIVATE src/hello_object.cpp)
+target_sources(
+    ch3_hello_object
+    PRIVATE src/hello_object.cpp
+)
 
 # define the C++ standard needed to compile this library and make it visible to
 # dependers
-target_compile_features(ch3_hello_object PUBLIC cxx_std_17)
+target_compile_features(
+    ch3_hello_object
+    PUBLIC cxx_std_17
+)
 
 # set the include directories
 target_include_directories(

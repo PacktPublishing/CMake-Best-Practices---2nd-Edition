@@ -1,20 +1,26 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
-# find the libary file libobscure.so obscure.dll or libobscure.1.0.0.so or similar
-# Additionally to the default paths look in ${PROJECT_SOURCE_DIR}/dep/
+# find the library file libobscure.so obscure.dll or libobscure.1.0.0.so or
+# similar Additionally to the default paths look in ${PROJECT_SOURCE_DIR}/dep/
 # in each subdirectory append bin lib build/Release and build/Debug
 find_library(
     OBSCURE_LIBRARY
-    NAMES obscure 
+    NAMES obscure
     HINTS ${PROJECT_SOURCE_DIR}/dep/ ${CMAKE_CURRENT_BINARY_DIR}/dep
-    PATH_SUFFIXES lib bin build/Release build/Debug 
+    PATH_SUFFIXES
+        lib
+        bin
+        build/Release
+        build/Debug
 )
 
 # find the main header belonging to the obscure lib
 find_path(
     OBSCURE_INCLUDE_DIR
     NAMES obscure/obscure.hpp
-    HINTS ${PROJECT_SOURCE_DIR}/dep/include/ ${CMAKE_CURRENT_BINARY_DIR}/dep/include ${CMAKE_CURRENT_SOURCE_DIR}/dep/include
+    HINTS ${PROJECT_SOURCE_DIR}/dep/include/
+          ${CMAKE_CURRENT_BINARY_DIR}/dep/include
+          ${CMAKE_CURRENT_SOURCE_DIR}/dep/include
 )
 
 # use the FindPackageHandleStandardArgs to check if everything was found
@@ -30,11 +36,18 @@ find_package_handle_standard_args(
 mark_as_advanced(OBSCURE_LIBRARY OBSCURE_INCLUDE_DIR)
 
 # if not building the library itself
-if(NOT TARGET Obscure::Obscure)
-    
+if(NOT
+   TARGET
+   Obscure::Obscure
+)
+
     # make the library target available
-    add_library(Obscure::Obscure UNKNOWN IMPORTED)
-    
+    add_library(
+        Obscure::Obscure
+        UNKNOWN
+        IMPORTED
+    )
+
     # set the properties so the artifacts of the packages can be found
     set_target_properties(
         Obscure::Obscure

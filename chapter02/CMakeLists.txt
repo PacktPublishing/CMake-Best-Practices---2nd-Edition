@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     "CMake Best Practices Chapter 2"
@@ -22,11 +22,19 @@ set(CHAPTER2_BUILD_DRIVER_APPLICATION
 mark_as_advanced(CHAPTER2_BUILD_DRIVER_APPLICATION)
 
 # MSVC requires these two flags to be set in order to link driver executable
-# against shared library.
-# The topic is about symbol visibility will be further discussed in Chapter 3.
-if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
-  message(VERBOSE "Windows environment detected, overriding default symbol visibility to `visible` instead of `hidden`")
-  set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+# against shared library. The topic is about symbol visibility will be further
+# discussed in Chapter 3.
+if(CMAKE_SYSTEM_NAME
+   STREQUAL
+   "Windows"
+)
+    message(
+        VERBOSE
+        "Windows environment detected, overriding default symbol visibility to `visible` instead of `hidden`"
+    )
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS
+        TRUE
+    )
 endif()
 
 add_subdirectory(simple_example)

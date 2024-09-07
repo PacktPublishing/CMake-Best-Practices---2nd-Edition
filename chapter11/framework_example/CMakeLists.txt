@@ -1,7 +1,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ch11_framework_example
@@ -24,7 +24,10 @@ set_target_properties(
                PUBLIC_HEADER include/hello.hpp
                PRIVATE_HEADER src/internal.hpp
 )
-target_compile_features(ch11_framework_example PRIVATE cxx_std_17)
+target_compile_features(
+    ch11_framework_example
+    PRIVATE cxx_std_17
+)
 
 # add sources to the library target
 target_sources(

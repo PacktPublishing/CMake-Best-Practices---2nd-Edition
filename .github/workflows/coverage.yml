@@ -9,7 +9,7 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-    
+
 
 jobs:
   linux-coverage:
@@ -39,7 +39,7 @@ jobs:
 
       - name: build
         run: |
-          cmake --build ./build 
+          cmake --build ./build
         shell: bash
 
       - name: ctest
@@ -64,7 +64,7 @@ jobs:
           path: |
             ./build/gcov-coverage/
             ./build/lcov-coverage/
-  
+
   windows-coverage:
     name: windows-coverage
     runs-on: windows-2022

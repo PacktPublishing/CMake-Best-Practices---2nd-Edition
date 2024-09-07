@@ -1,16 +1,29 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.25...3.30)
 
-
-if(CMAKE_ARGC LESS 5)
-    message(FATAL_ERROR "Usage: cmake -P WriteMain.cmake message_file target_file")
+if(CMAKE_ARGC
+   LESS
+   5
+)
+    message(
+        FATAL_ERROR "Usage: cmake -P WriteMain.cmake message_file target_file"
+    )
 endif()
 
-set(MESSAGE_FILE ${CMAKE_ARGV3})
-set(TARGET_FILE ${CMAKE_ARGV4})
+set(MESSAGE_FILE
+    ${CMAKE_ARGV3}
+)
+set(TARGET_FILE
+    ${CMAKE_ARGV4}
+)
 
-file(READ ${MESSAGE_FILE} MESSAGE)
+file(
+    READ
+    ${MESSAGE_FILE}
+    MESSAGE
+)
 
-set(MAIN_CC_CODE "
+set(MAIN_CC_CODE
+    "
 #include <iostream>
 int main() {
     std::cout << \"${MESSAGE}\";
@@ -19,4 +32,7 @@ int main() {
 )
 
 # write the hash to a new file
-file(WRITE "${TARGET_FILE}" "${MAIN_CC_CODE}")
+file(
+    WRITE "${TARGET_FILE}"
+    "${MAIN_CC_CODE}"
+)

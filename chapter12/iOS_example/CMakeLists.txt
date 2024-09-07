@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.25...3.30)
 
 project(
     ioslib
@@ -44,4 +44,7 @@ target_include_directories(
     PUBLIC include
 )
 
-install(TARGETS ioslib DESTINATION lib)
+install(
+    TARGETS ioslib
+    DESTINATION lib
+)
