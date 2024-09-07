@@ -35,7 +35,7 @@ externalproject_add_step(
     COMMAND
         ${CMAKE_COMMAND} -E tar "cvzf"
         ${CMAKE_CURRENT_BINARY_DIR}/licenses.tar.gz <SOURCE_DIR>/LICENSE
-        DEPENDENCIES build
+    DEPENDEES build
     ALWAYS YES
 )
 

@@ -4,23 +4,31 @@ IndentWidth: 4
 UseTab: Never
 ---
 Language: Cpp
-BasedOnStyle: WebKit
-# XXX ColumnLimit: 123
-AccessModifierOffset: -4
-AllowShortIfStatementsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: Inline
-ConstructorInitializerIndentWidth: 4
-ContinuationIndentWidth: 4
-DerivePointerAlignment: false
-IndentWidth: 4
-InsertBraces: true
-InsertNewlineAtEOF: true
-NamespaceIndentation: None
-PointerAlignment: Right
-SpacesBeforeTrailingComments: 1
-UseTab: Never
-#
-AlignTrailingComments:
-  # XXX Kind: Never
-  Kind: Always
-  OverEmptyLines: 1
+BasedOnStyle: Llvm
+
+# ColumnLimit: 80
+# AccessModifierOffset: -2
+# AllowShortIfStatementsOnASingleLine: false
+# AllowShortFunctionsOnASingleLine: Inline
+# ConstructorInitializerIndentWidth: 4
+# ContinuationIndentWidth: 4
+# DerivePointerAlignment: false
+# #
+# # TODO: TBD 4 instead of 2? CK
+# # XXX IndentWidth: 4
+# InsertBraces: true
+# InsertNewlineAtEOF: true
+# NamespaceIndentation: None
+# PointerAlignment: Right
+# SpacesBeforeTrailingComments: 1
+# UseTab: Never
+
+# TODO: TBD Keep original style? CK
+# AlignTrailingComments:
+#   Kind: Always
+#   OverEmptyLines: 0
+
+# TODO: TBD Keep original style? CK
+# BreakBeforeBraces: Custom
+# BraceWrapping:
+#   AfterNamespace: true
