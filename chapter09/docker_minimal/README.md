@@ -19,5 +19,5 @@ docker run --user $(id -u):$(id -g) --rm -v $(pwd):/workspace builder_minimal cm
 
 the `--user $(id -u):$(id -g)` flag will tell docker to run as the current user. The user-ID and group id are retrieved using the `id` command from bash. If running on windows this might be ignored. 
 The `--rm` flag tells docker to discard the container after use. 
-the `-v` flag tells docker to mount the curent working director into the container to the path `/workspace`
+the `-v` flag tells docker to mount the current working director into the container to the path `/workspace`
 After the flags the cmanke commands to be executed inside the docker container are passed. 

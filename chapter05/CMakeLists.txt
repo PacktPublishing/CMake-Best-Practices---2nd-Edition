@@ -18,7 +18,7 @@ add_subdirectory(fetch_content_example)
 add_subdirectory(external_project)
 
 # Look for the conan command on the host system, if conan is not found
-# exclude all conan related examples from the proejct
+# exclude all conan related examples from the project
 find_program(CONAN_EXECUTABLE conan)
 
 if(CONAN_EXECUTABLE)

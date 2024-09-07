@@ -1,6 +1,6 @@
 
 # CMakeLists file for the Chapter 7. Example to show test timeout
-# increse the timeout in src/main.cpp to try this out
+# increase the timeout in src/main.cpp to try this out
 # 
 # SPDX-License-Identifier: MIT
 

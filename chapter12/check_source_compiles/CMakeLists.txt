@@ -14,7 +14,7 @@ project(
 # include the module to check if the source compiles
 include(CheckSourceCompiles)
 
-# check if the soure compiles and save the result in HAS_STD_ATOMIC
+# check if the source compiles and save the result in HAS_STD_ATOMIC
 check_source_compiles(CXX "
 #include <atomic>
 int main(){

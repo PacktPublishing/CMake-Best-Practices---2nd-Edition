@@ -12,7 +12,7 @@ project(
 #include CTest module for defining tests later
 include(CTest)
 
-# Check if the currenct generator is a multi-configuration generator or not
+# Check if the current generator is a multi-configuration generator or not
 get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 
 # For multi-config generators add the build configuration "Coverage" to the 
@@ -48,7 +48,7 @@ set(CMAKE_SHARED_LINKER_FLAGS_COVERAGE "${CMAKE_SHARED_LINKER_FLAGS_DEBUG} --cov
 set(CMAKE_STATIC_LINKGER_FLAGS_COVERAGE "${CMAKE_STATIC_LINKER_FLAGS_DEBUG} --coverage" CACHE STRING "")
 set(CMAKE_MODULE_LINKER_FLAGS_COVERAGE "${CMAKE_MODULE_LINKER_FLAGS_DEBUG} --coverage" CACHE STRING "")
 
-# Mark the flags for the Coverage build type advanced to prevent accidential tampering 
+# Mark the flags for the Coverage build type advanced to prevent accidental tampering 
 # with the flags
 mark_as_advanced(CMAKE_C_FLAGS_COVERAGE 
                  CMAKE_CXX_FLAGS_COVERAGE 
