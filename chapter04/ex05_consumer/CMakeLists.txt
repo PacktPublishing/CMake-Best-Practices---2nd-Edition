@@ -8,7 +8,7 @@ cmake_minimum_required(VERSION 3.23)
 project(
   ch4_ex05_consumer
   VERSION 1.0
-  DESCRIPTION "Chapter 4 Example 05, Out ot project config-file package consumer"
+  DESCRIPTION "Chapter 4 Example 05, Out of project config-file package consumer"
   LANGUAGES CXX)
 
 if(NOT PROJECT_IS_TOP_LEVEL)

@@ -22,7 +22,7 @@ set(CMAKE_DEBUG_POSTFIX
 
 # add the library target
 add_library(ch3_hello_shared SHARED)
-# Add an alis for the library target
+# Add an alias for the library target
 add_library(ch3_hello_shared::ch3_hello_shared ALIAS ch3_hello_shared)
 
 # set properties for the target. VERSION set the library version to the project
@@ -79,6 +79,6 @@ target_include_directories(
     PUBLIC "${CMAKE_CURRENT_BINARY_DIR}/export"
 )
 
-# An alternative but not recomended way export the symbols is to use
+# An alternative but not recommended way export the symbols is to use
 # set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS TRUE) Which exports all dll symbols by
 # default

@@ -11,7 +11,7 @@ project(
   DESCRIPTION "A simple C++ project to demonstrate creating a post-build step using a custom command"
   LANGUAGES CXX)
 
-# define a exectuable target
+# define a executable target
 add_executable(
   ch8_custom_command_example
   src/main.cpp)

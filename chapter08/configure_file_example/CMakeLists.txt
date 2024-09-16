@@ -22,7 +22,7 @@ endif()
 option(GIT_VERSION_ENABLE "Define the git version in a header file" ON)
 
 if(GIT_VERSION_ENABLE)
-# execute a git command at configuration time and store teh results in the GIT_REVISION variable
+# execute a git command at configuration time and store the results in the GIT_REVISION variable
 # strip any trailing whitespaces and threat any non-zero return value as fatal error
 execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
                 OUTPUT_VARIABLE GIT_REVISION 

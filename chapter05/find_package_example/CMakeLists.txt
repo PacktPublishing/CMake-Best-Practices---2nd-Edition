@@ -12,7 +12,7 @@ project(
     LANGUAGES CXX
 )
 
-# enable debuging for finding the package (For illustrative purposes)
+# enable debugging for finding the package (For illustrative purposes)
 # set(CMAKE_FIND_DEBUG_MODE TRUE )
 
 

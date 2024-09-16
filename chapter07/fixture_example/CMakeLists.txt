@@ -21,7 +21,7 @@ target_sources(ch7_fixture_sample PRIVATE src/main.cpp)
 add_executable(ch7_fixture_server)
 target_sources(ch7_fixture_server PRIVATE src/server.cpp)
 
-# The comand to start the server is added as a test and then marked as 
+# The command to start the server is added as a test and then marked as 
 # setup function for the fixture named ch7_server
 add_test(NAME start_server COMMAND ch7_fixture_server)
 set_tests_properties(start_server PROPERTIES FIXTURES_SETUP ch7_server)
