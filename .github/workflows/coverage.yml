@@ -58,7 +58,7 @@ jobs:
         working-directory: ./build
 
       - name: archive coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
           path: |
@@ -108,7 +108,7 @@ jobs:
         working-directory: ./build
 
       - name: archive coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: code-coverage-report
           path: |
