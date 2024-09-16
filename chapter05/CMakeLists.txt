@@ -17,16 +17,9 @@ add_subdirectory(find_module)
 add_subdirectory(fetch_content_example)
 add_subdirectory(external_project)
 
-# Look for the conan command on the host system, if conan is not found
-# exclude all conan related examples from the project
-find_program(CONAN_EXECUTABLE conan)
-
-if(CONAN_EXECUTABLE)
-    # add_subdirectory(conan_example)
-    # add_subdirectory(conan_conanfile_example)
-else()
-    message(STATUS "Conan not found. Will not build conan examples")
-endif()
+# the subproject conan_example is supposed to be run as a standalone project
+# as it illustrates using conan as a dependency provider which requires inclusion
+# of conan.cmake at the root of the project
 
 # Look for the vcpkg executable on the host system, if vcpkg is not found
 # exclude all vcpkg-related examples from the project
